@@ -1,0 +1,10 @@
+<% content_for :heading do %>
+  Editing listing
+<%end%>
+<% content_for :actions do %>
+  <%= link_to 'Show', admin_listing_path(@admin_listing) %> |
+  <%= link_to 'Back', admin_listings_path %>
+<%end%>
+
+<%= render 'form' %>
+

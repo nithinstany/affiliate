@@ -1,0 +1,32 @@
+<% content_for :heading do %>
+   Listing listings
+<%end%>
+<% content_for :actions do %>
+  <%= link_to 'New Listing', new_admin_listing_path %>
+<%end%>
+
+<table>
+  <tr>
+    <th>Banner</th>
+     <th>Category</th>
+     <th>Affiliate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_listings.each do |admin_listing| %>
+  <tr>
+    <td><%= raw(admin_listing.banner) %></td>
+     <td><%= admin_listing.category.name %></td>
+
+      <td><%= admin_listing.affiliate_merchant.name%></td>
+    <td><%= link_to 'Show', admin_listing_path(admin_listing) %></td>
+    <td><%= link_to 'Edit', edit_admin_listing_path(admin_listing) %></td>
+    <td><%= link_to 'Destroy', admin_listing_path(admin_listing), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

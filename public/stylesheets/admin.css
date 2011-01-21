@@ -1,0 +1,178 @@
+body{ background: #e2e2e2; font:14px/21px Verdana,Arial,sans-serif;
+	font-size:90%;
+	color:#333;
+	line-height:20px;
+}
+
+.left{float: left;}
+.right{float: right;}
+.clear{clear: both;}
+.hidden{display: none;}
+
+#logo {padding: 6px 15px;}
+#logo h1{color: /*#0091d4*/ #fff; font-size: 180%;  }
+#header{background:#6BAEFB;  border-top: 1px solid #bbc5cd;  }
+
+#wrapper{width: 100%; background: #fff /*f1f3f6*/; min-height:650px; height:auto !important; /*for ie*/ height:650px; border-bottom: 5px solid #bbb; }
+#content{margin: 20px auto; width: 93%;  background: #fff; padding: 0px 20px 20px 20px;  border: 1px solid #bbc5cd; -moz-border-radius: 6px; -webkit-border-radius: 6px; -khtml-border-radius: 6px; }
+
+#global_links{margin-right: 25px; margin-top: 6px;}
+#global_links a{
+ color: orange;
+}
+
+input{ padding: 4px 3px;}
+.field{margin-bottom: 15px;}
+.field label{font-weight: bold; color: #555;}
+
+#menu ul {
+  border-top: 1px solid #2f679f;
+  background: /*#f8f8f8 url('/images/menu_bar.png') repeat-x bottom*/ #c3d9ff;
+  margin: 0px auto;
+  padding: 18px 18px 0px;
+  height: 38px;
+  border-bottom: 1px solid #aaa;
+
+}
+
+#menu ul li{
+  display: inline;
+  font-size: 15px;
+  margin: 5px;
+  padding: 13px 10px 13px 10px;
+
+
+  padding-left: 36px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+
+}
+
+#menu ul li a{
+  /*background: #5786b7*/ /*url('/images/menu-bg.png')*/;
+
+  color: #0082d5;
+  font-weight: bold;
+  font-size: 100%;
+  text-decoration:none;
+
+
+}
+
+
+
+#menu ul li a.current{
+  color: #0082d5;
+  background: #c1d4ed ;
+}
+
+
+table.listing {
+border-collapse : collapse;
+width : 100%;
+margin: 0 auto;
+color : #2a2f38;
+border : 1px solid #ccc;
+}
+
+table.listing caption{
+background: #dfeaf3;
+padding: 5px 7px;
+font-weight: bold;
+font-size: 120%;
+color: #e8a900;
+border-top : 1px solid #ccc;
+border-left : 1px solid #ccc;
+border-right : 1px solid #ccc;
+}
+
+.listing th {
+background: #cbdcf2 ; /*#f1f1f1 url(/images/table-header.jpg) repeat-x bottom*/
+
+color: #2A384D;
+text-align : left;
+padding : 0.5em 0.5em 0.3em;
+border-bottom : 1px solid #ccc;
+
+font-weight : bold;
+}
+
+
+
+.listing tr th a {
+color : #3E4D63;
+}
+
+.listing tr td a {
+color : #cd8200;
+}
+
+
+.listing td {
+padding : 0.6em 0.5em 0.5em 0.5em;
+color : #2a2f38;
+border-top : 1px solid #fff;
+border-bottom : 1px solid #ccc;
+background : #fff;
+}
+
+
+table.form_table {
+border-collapse : collapse;
+width : 100%;
+margin: 0 auto;
+color : #2a2f38;
+border : 1px solid #bbb;
+}
+
+#menu ul li:hover a{
+  color: #0082d5;
+ /* background: #A2C10F;*/
+}
+
+#top_bar{padding: 10px 20px; background: #fff /*url(/images/menu_bar.png) repeat-x bottom*/;   border-bottom: 1px solid #bbc5cd; margin: 0px -20px 25px -20px; -moz-border-radius: 6px 6px 0px 0px; -webkit-border-radius: 6px 6px 0px 0px; -khtml-border-radius: 6px 6px 0px 0px;}
+#top_bar h1{margin-top: 5px; color: #0885c0;}
+
+#content_heading {font-size: 100%; color: #666;}
+
+.addbutton {
+	background-color:#4a8f09;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	padding:6px 1px;
+}
+
+a.button{ background:  url(/images/button.png) repeat-x bottom;  color: #fff; font-weight: bold; font-size: 90%;padding: 7px 15px;border:1px solid #79d026;-moz-border-radius:5px;
+	-webkit-border-radius:5px;}
+
+a.button:hover{  color: #f3e500;  }
+
+label       { font-weight: bold; }
+fieldset    { padding:0 1.4em 1.4em 1.4em; margin: 0 0 1.5em 0; border: 1px solid #ccc; }
+legend      { font-weight: bold; font-size:1.2em; margin-top:-0.2em; margin-bottom:1em; }
+
+fieldset, #IE8#HACK { padding-top:1.4em; }
+legend, #IE8#HACK { margin-top:0; margin-bottom:0; }
+
+
+input[type=text], input[type=password],
+input.text, input.title,
+
+input[type=text]:focus, input[type=password]:focus,
+input.text:focus, input.title:focus,
+textarea:focus {
+  border-color:#666;
+}
+select { background-color:#fff; border-width:1px; border-style:solid; }
+
+input[type=text], input[type=password],
+input.text, input.title,
+textarea, select {
+  margin:0.5em 0;
+}
+
+input.text,
+input.title   { width: 300px; padding:5px; }
+input.title   { font-size:1.5em; }
+textarea      { width: 664px; height: 250px; padding:5px; background-color:#fff; border:1px solid #bbb; }
+

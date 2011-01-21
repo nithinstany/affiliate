@@ -1,0 +1,12 @@
+<% content_for :heading do %>
+  Editing affiliate_merchant
+<%end%>
+<% content_for :actions do %>
+  <%= link_to 'Show', admin_affiliate_merchant_path(@affiliate_merchant) %> |
+  <%= link_to 'Back', admin_affiliate_merchants_path %>
+<%end%>
+
+
+
+<%= render 'form' %>
+

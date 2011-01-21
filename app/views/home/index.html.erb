@@ -1,0 +1,24 @@
+<h1> Listing </h1>
+
+<div id='listings'>
+  <% Listing.featured.each do |listing| %>
+    <%= raw(listing.banner) %> <br />
+  <%end%>
+</div>
+
+<% if current_user %>
+  <% content_for :extra_javascripts do %>
+    <script type="text/javascript">
+      $(function()
+        {
+           $("#listings > a").each(function ()
+           {
+              var href = $(this).attr('href');
+              $(this).attr('href', href + "&key=<%=current_user.key%>");
+           });
+
+        });
+    </script>
+  <%end%>
+<%end%>
+

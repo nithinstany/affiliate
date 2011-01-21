@@ -1,0 +1,21 @@
+<% content_for :heading do %>
+  showing listing
+<%end%>
+<% content_for :actions do %>
+  <%= link_to 'Edit', edit_admin_listing_path(@admin_listing) %> |
+  <%= link_to 'Back', admin_listings_path %>
+<%end%>
+
+<p>
+  <b>Banner:</b>
+  <%= @admin_listing.banner %>
+</p>
+<p>
+  <b>Category:</b>
+  <%= @admin_listing.category.name %>
+</p>
+<p>
+  <b>Affiliate:</b>
+  <%= @admin_listing.affiliate_merchant.name %>
+</p>
+

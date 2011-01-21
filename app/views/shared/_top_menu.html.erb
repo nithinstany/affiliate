@@ -1,0 +1,8 @@
+<% unless current_user -%>
+  <%= link_to 'Sign-up', new_user_registration_path %> &nbsp; | &nbsp;
+  <%= link_to 'Login', new_user_session_path %> &nbsp; | &nbsp;
+  <%= link_to image_tag("/images/social-icons/facebook_32.png", :alt => "Sign in with Facebook"), omniauth_authorize_path('user', 'facebook') %>
+<%else-%>
+  <%= link_to 'Logout', destroy_user_session_path %>
+<%end-%>
+

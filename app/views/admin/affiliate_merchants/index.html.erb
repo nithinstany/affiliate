@@ -1,0 +1,27 @@
+<% content_for :heading do %>
+  Listing affiliate
+<%end%>
+<% content_for :actions do %>
+  <%= link_to 'New Affiliate merchant', new_admin_affiliate_merchant_path, :class => 'button' %>
+<%end%>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @affiliate_merchants.each do |affiliate_merchant| %>
+  <tr>
+    <td><%= affiliate_merchant.name %></td>
+    <td><%= link_to 'Show', admin_affiliate_merchant_path(affiliate_merchant) %></td>
+    <td><%= link_to 'Edit', edit_admin_affiliate_merchant_path(affiliate_merchant) %></td>
+    <td><%= link_to 'Destroy', admin_affiliate_merchant_path(affiliate_merchant), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

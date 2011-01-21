@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Affiliate</title>
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+   <script type ='text/javascript'>
+    var auth_token = '<%=escape_javascript(form_authenticity_token)%>'
+  </script>
+  <%= yield :extra_javascripts %>
+</head>
+<body>
+  <div id= 'wrapper'>
+    <div id = 'header'>
+      <div class = 'left'>
+        <h1 class= 'logo'> Affiliate </h1>
+      </div>
+      <div class = 'right'>
+         <%= render :partial => 'shared/top_menu'%>
+      </div>
+      <div class = 'clear'> </div>
+    </div>
+     <%if notice %> <p class="notice"><%= notice %> </p><%end-%>
+     <%= yield %>
+  </div>
+</body>
+</html>
+

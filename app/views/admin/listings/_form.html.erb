@@ -1,0 +1,41 @@
+<%= form_for [:admin,@admin_listing],:html => { :multipart => true }  do |f| %>
+  <% if @admin_listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_listing.errors.count, "error") %> prohibited this admin_listing from being saved:</h2>
+
+      <ul>
+      <% @admin_listing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :banner %><br />
+    <%= f.text_area :banner %><br />
+     <%= f.label :category %><br />
+     <%= f.select :category_id, Category.all.collect{|u| [u.name, u.id] }, {:prompt => 'Select Category'}%><br/>
+      <%= f.label :affiliate %><br />
+     <%= f.select :affiliate_merchant_id, AffiliateMerchant.all.collect{|u| [u.name, u.id] }, {:prompt => 'Select affiliate'}%><br />
+     <%= f.label :Featured %>
+     <%= f.check_box :featured %>
+   </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= content_for :extra_javascripts do %>
+
+ <%= javascript_include_tag 'jHtmlArea-0.7.0' %>
+ <%= stylesheet_link_tag 'jHtmlArea' %>
+
+    <script type="text/javascript">
+        $(function() {
+            $("textarea").htmlarea();
+        });
+    </script>
+<%end%>
+

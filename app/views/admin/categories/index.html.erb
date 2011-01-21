@@ -1,0 +1,29 @@
+<% content_for :heading do %>
+   Listing categories
+<%end%>
+<% content_for :actions do %>
+   <%= link_to 'New Category', new_admin_category_path %>
+<%end%>
+
+
+
+<table>
+  <tr>
+    <th>Name</th>
+       <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%= category.name %></td>
+    <td><%= link_to 'Show', admin_category_path(category) %></td>
+    <td><%= link_to 'Edit', edit_admin_category_path(category) %></td>
+    <td><%= link_to 'Destroy', admin_category_path(category), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
