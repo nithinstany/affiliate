@@ -7,12 +7,14 @@
   <tr>
     <th> Name </th>
     <th> Email </th>
+    <th> </th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-     <td> <%= user.first_name  %> </td>
+     <td> <%= user.name  %> </td>
      <td> <%= user.email %> </td>
+     <td> <%= 'facebook user' if user.provider == 'facebook' %> </td>
   </tr>
 <% end %>
 </table>

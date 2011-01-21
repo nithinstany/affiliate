@@ -2,18 +2,16 @@
 
 <%= form_for(resource_name, resource, :url => registration_path(resource_name)) do |f| %>
   <%= f.error_messages %>
-  <p><%= f.label :first_name %></p>
-  <p><%= f.text_field :first_name %></p>
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %></p>
 
-  <p><%= f.label :last_name %></p>
-  <p><%= f.text_field :last_name %></p>
- 
+
   <p><%= f.label :address %></p>
   <p><%= f.text_field :address %></p>
- 
+
  <p><%= f.label :paypalId %></p>
   <p><%= f.text_field :paypal_id %></p>
-  
+
 <p><%= f.label :email %></p>
   <p><%= f.text_field :email %></p>
 
@@ -27,3 +25,4 @@
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
+

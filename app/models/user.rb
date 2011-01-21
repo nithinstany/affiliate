@@ -7,15 +7,19 @@ class User < ActiveRecord::Base
 
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation,:is_admin,:username,:remember_me
+  attr_accessible :email, :password, :password_confirmation,:is_admin,:username,:remember_me, :name
   before_create :set_key
 
-  scope :all_users_without_admin, :conditions => { :is_admin => 0 }
+
 
   def apply_omniauth(omniauth)
-    self.first_name = omniauth['user_info']['name'] if first_name.blank?
+    self.name = omniauth['user_info']['name'] if name.blank?
     self.provider = omniauth['provider']
     self.uid = omniauth['uid']
+  end
+
+  def self.all_users_without_admin
+    find(:all, :conditions => ['is_admin = ? or is_admin IS NULL', 0])
   end
 
   private
