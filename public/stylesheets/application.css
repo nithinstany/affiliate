@@ -36,3 +36,16 @@ body{
     clear:both;
 }
 
+.head{
+     background:url('2.jpg')repeat-x;
+     padding-top:1% 5% 1% 5%;
+}
+
+ul{
+   margin:0px;
+   padding:0px;}
+
+ul li a{
+   color:black;
+   text-decoration:none;
+}

@@ -1,0 +1,275 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,  table, caption{
+margin : 0;
+padding:0;
+border : 0;
+outline : 0;
+vertical-align : baseline;
+font-size:100%;
+font-style:normal;
+font-weight:normal;
+}
+
+:focus {
+   outline : 0;
+}
+
+
+table {
+border-collapse : separate;
+border-spacing : 0;
+}
+
+caption, th, td {
+text-align : left;
+font-weight : normal;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+content : "";
+}
+
+blockquote, q {
+quotes : "" "";
+}
+ 
+
+
+body{
+   padding:10px 0px;
+   font-size:13px;
+   background:url(/images/body.jpg) repeat-x;
+   font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both;}
+
+.header{
+     backgroxund: #a50303 url('/imagesx/5.jpg')repeat-x;
+     height:50px;
+     padding:10px 30px;
+    
+}
+
+.headerLeft{
+         width:30%;
+}
+
+.headerLeft h1{
+          color:#000;
+          font-size:250%;
+	  padding-top:10px;
+}
+
+.headerLeft h1 span{color:#ff006c;}
+
+.headerRight{
+       width:58%;
+       text-align:right;
+       color:#000;
+       size:12px;
+       
+}
+
+.headerRight a{
+         color:#000;
+         size:12px;
+text-decoration:none;
+}
+
+.header a:hover{
+      text-decoration:underline;
+}
+
+.headerRight a img{
+             border:none;
+}
+
+.wrapper{
+      padding:10px 30px;
+      background-color:#f8f8f8;
+      min-height:600px;
+}
+
+.login{
+    
+    width:30%;
+    background-color:#fbf3d4;
+    margin:0 auto;
+    padding:10px; 
+    font-size:15px;
+ -moz-border-radius: 5px;
+
+}
+
+.login label
+{
+     width: 7em;
+     float: left;
+     text-align:right;
+     display: block;
+     margin-top:5px;
+
+}
+
+.login input{
+      margin-left:1em;
+      margin-top:5px;
+      padding:5px;
+}
+
+.login h2{
+     
+     font-size:20px;
+     margin-bottom:10px;
+     border-bottom:1px solid #ddd;
+
+}
+
+.login p.submit input
+{
+           margin-left:119px;
+           padding:5px;
+} 
+
+.login a{
+     color:#1b1b5f;
+     margin-left:1px;
+     margin-top:9px;
+     font-size:90%;
+     text-decoration:none;
+
+ }
+.login a:hover {
+          text-decoration:underline;
+}
+
+.login ul{
+    margin:0px;
+    padding:0px;
+}
+
+.login ul li{
+     list-style:none;
+     float:left;
+     list-style:none;
+     
+}
+
+.login ul li a{
+     color:black;
+     text-decoration:none;
+}
+.forgotpaswd{
+    margin:10px;
+    width:28%;
+    background-color:#fbf3d4;
+    padding:10px; 
+    font-size:15px;
+-moz-border-radius: 1em;
+}
+
+.forgotpaswd a{
+      color:#1b1b5f;
+      margin-left:1px;
+      margin-top:9px;
+      font-size:90%;
+      text-decoration:none;
+
+ }
+
+.forgotpaswd a:hover {
+          text-decoration:underline;
+}
+
+.forgotpaswd h2{
+     
+     font-size:20px;
+     margin-bottom:10px;
+     border-bottom:1px solid #ddd;
+
+}
+
+.forgotpaswd p.submit input
+{
+           
+           padding:5px;
+} 
+.forgotpaswd input{
+      margin-left:0em;
+      margin-top:5px;
+      padding:5px;
+}
+
+
+.category{
+
+     min-height:176px;
+     width:18%;
+     
+     float:left;
+     border:1px solid silver;
+ -moz-border-radius: 5px;
+
+}
+
+
+.category ul{
+    margin:0px;
+    padding:0px; 
+    list-style:none;
+   
+}
+
+.category ul li{
+    padding:10px 5px;
+  
+    display:block;
+    margin-left:4px;
+    margin-top:5px;
+    border-bottom:1px solid #ddd;
+     
+}
+
+.category ul li a{
+     color:black;
+     text-decoration:none;
+     padding:0px 12px;
+     font-size:15px;
+background:url('/images/bullet.jpg') no-repeat;
+     
+}
+
+.category ul li a:hover{
+    
+     text-decoration:underline;
+ 
+}
+.list{
+    -moz-border-radius: 5px;
+    min-height:165px;
+    width:79%;
+    border:1px solid #ddd;
+    float:right;
+    padding:10px; 
+    font-size:18px;
+
+}
+
+.categoryleft{
+height:30px;
+width:18%;
+
+-moz-border-radius: 5px;
+margin-bottom:1px;
+}
+
+.categoryleft h1{
+     font-size:18px;
+     margin-bottom:10px;
+     margin-left:45px;
+     
+}
+
+     
