@@ -1,17 +1,16 @@
-<div class='side_bar'>
-<% Category.all.each do |category| %>
-   <%= link_to category.name, '#' %> <br />
+
+<div class="category left">
+<ul><% Category.all.each do |category| %>
+  <li> <%= link_to category.name, '#' %> </li>
 <%end%>
-
+</ul>
 </div>
-<div class='container'>
-  <h1> Listing </h1>
+<div class="list">
+  
 
-  <div id='listings'>
     <% Listing.featured.each do |listing| %>
       <%= raw(listing.banner) %> <br />
     <%end%>
-  </div>
 
   <% if current_user %>
     <% content_for :extra_javascripts do %>
@@ -28,5 +27,6 @@
       </script>
     <%end%>
   <%end%>
-</div>
 
+
+</div>
