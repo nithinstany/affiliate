@@ -1,9 +1,10 @@
-
 <%= render :partial => 'shared/category_sidebar' %>
+
 <div class="list">
 
   <h1> Listings </h1>
-    <% Listing.featured.each do |listing| %>
+
+    <% @category.listings.featured.each do |listing| %>
       <%= raw(listing.banner) %> <br />
     <%end%>
 

@@ -31,7 +31,7 @@ content : "";
 blockquote, q {
 quotes : "" "";
 }
- 
+
 
 
 body{
@@ -49,7 +49,7 @@ body{
      backgroxund: #a50303 url('/imagesx/5.jpg')repeat-x;
      height:50px;
      padding:10px 30px;
-    
+
 }
 
 .headerLeft{
@@ -69,7 +69,7 @@ body{
        text-align:right;
        color:#000;
        size:12px;
-       
+
 }
 
 .headerRight a{
@@ -93,11 +93,11 @@ text-decoration:none;
 }
 
 .login{
-    
+
     width:30%;
     background-color:#fbf3d4;
     margin:0 auto;
-    padding:10px; 
+    padding:10px;
     font-size:15px;
  -moz-border-radius: 5px;
 
@@ -120,7 +120,7 @@ text-decoration:none;
 }
 
 .login h2{
-     
+
      font-size:20px;
      margin-bottom:10px;
      border-bottom:1px solid #ddd;
@@ -131,7 +131,7 @@ text-decoration:none;
 {
            margin-left:119px;
            padding:5px;
-} 
+}
 
 .login a{
      color:#1b1b5f;
@@ -154,7 +154,7 @@ text-decoration:none;
      list-style:none;
      float:left;
      list-style:none;
-     
+
 }
 
 .login ul li a{
@@ -165,7 +165,7 @@ text-decoration:none;
     margin:10px;
     width:28%;
     background-color:#fbf3d4;
-    padding:10px; 
+    padding:10px;
     font-size:15px;
 -moz-border-radius: 1em;
 }
@@ -184,7 +184,7 @@ text-decoration:none;
 }
 
 .forgotpaswd h2{
-     
+
      font-size:20px;
      margin-bottom:10px;
      border-bottom:1px solid #ddd;
@@ -193,9 +193,9 @@ text-decoration:none;
 
 .forgotpaswd p.submit input
 {
-           
+
            padding:5px;
-} 
+}
 .forgotpaswd input{
       margin-left:0em;
       margin-top:5px;
@@ -207,7 +207,7 @@ text-decoration:none;
 
      min-height:176px;
      width:18%;
-     
+
      float:left;
      border:1px solid silver;
  -moz-border-radius: 5px;
@@ -217,19 +217,19 @@ text-decoration:none;
 
 .category ul{
     margin:0px;
-    padding:0px; 
+    padding:0px;
     list-style:none;
-   
+
 }
 
 .category ul li{
     padding:10px 5px;
-  
+
     display:block;
     margin-left:4px;
     margin-top:5px;
     border-bottom:1px solid #ddd;
-     
+
 }
 
 .category ul li a{
@@ -238,13 +238,13 @@ text-decoration:none;
      padding:0px 12px;
      font-size:15px;
 background:url('/images/bullet.jpg') no-repeat;
-     
+
 }
 
 .category ul li a:hover{
-    
+
      text-decoration:underline;
- 
+
 }
 .list{
     -moz-border-radius: 5px;
@@ -252,7 +252,7 @@ background:url('/images/bullet.jpg') no-repeat;
     width:79%;
     border:1px solid #ddd;
     float:right;
-    padding:10px; 
+    padding:10px;
     font-size:18px;
 
 }
@@ -269,7 +269,11 @@ margin-bottom:1px;
      font-size:18px;
      margin-bottom:10px;
      margin-left:45px;
-     
+
+}
+h1 {
+    font-size:25px;
+    font-weight:bold;
+    margin-bottom:5px;
 }
 
-     

@@ -4,7 +4,7 @@ gem 'rails', '3.0.3'
 gem 'mysql2'
 gem 'devise', :git => 'git://github.com/plataformatec/devise'#, :branch => 'omniauth'
 gem 'omniauth'
-
+gem 'friendly_id', "~>3.1"
 
 
 

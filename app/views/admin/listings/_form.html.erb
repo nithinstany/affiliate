@@ -26,16 +26,3 @@
   </div>
 <% end %>
 
-
-<%= content_for :extra_javascripts do %>
-
- <%= javascript_include_tag 'jHtmlArea-0.7.0' %>
- <%= stylesheet_link_tag 'jHtmlArea' %>
-
-    <script type="text/javascript">
-        $(function() {
-            $("textarea").htmlarea();
-        });
-    </script>
-<%end%>
-
