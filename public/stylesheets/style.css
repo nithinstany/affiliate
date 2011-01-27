@@ -246,7 +246,7 @@ background:url('/images/bullet.jpg') no-repeat;
      text-decoration:underline;
 
 }
-.list{
+#listings {
     -moz-border-radius: 5px;
     min-height:165px;
     width:79%;

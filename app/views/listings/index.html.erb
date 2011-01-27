@@ -1,12 +1,14 @@
 <%= render :partial => 'shared/category_sidebar' %>
 
-<div class="list">
+<div id="listings">
 
-  <h1> Listings </h1>
-
+  <% unless @category.listings.featured.blank? %>
     <% @category.listings.featured.each do |listing| %>
-      <%= raw(listing.banner) %> <br />
+       <%= raw(listing.banner) %> <br />
     <%end%>
+  <%else%>
+     <p> Listings are not available for category </p>
+  <%end%>
 
   <% if current_user %>
     <% content_for :extra_javascripts do %>
