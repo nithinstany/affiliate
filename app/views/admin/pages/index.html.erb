@@ -1,0 +1,31 @@
+<% content_for :heading do %>
+   Listing Pages
+<%end%>
+<% content_for :actions do %>
+  <%= link_to 'New Page', new_admin_page_path %>
+<%end%>
+
+<table>
+  <tr>
+
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pages.each do |page| %>
+  <tr>
+
+    <td><%= page.title %></td>
+    <td><%= truncate(page.body, {:length => 40, :omission => '... (continued)'}) %></td>
+    <td><%= link_to 'Show', [:admin, page] %></td>
+    <td><%= link_to 'Edit', edit_admin_page_path(page) %></td>
+    <td><%= link_to 'Destroy', [:admin, page], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

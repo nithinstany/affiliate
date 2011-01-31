@@ -1,7 +1,5 @@
 Affiliate::Application.routes.draw do
 
-
-
   resources :categories do
     resources :listings
   end
@@ -16,6 +14,7 @@ Affiliate::Application.routes.draw do
     resources :affiliate_merchants
     resources :users
     resources :earnings
+    resources :pages
   end
 
 

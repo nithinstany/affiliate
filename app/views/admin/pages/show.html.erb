@@ -1,0 +1,18 @@
+<% content_for :heading do %>
+   show page
+<%end%>
+<% content_for :actions do %>
+  <%= link_to 'Edit', edit_admin_page_path(@page) %> | <%= link_to 'Back', admin_pages_path %>
+<%end%>
+
+
+<p>
+  <b>Title:</b>
+  <%= @page.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= raw @page.body %>
+</p>
+

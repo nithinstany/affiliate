@@ -7,14 +7,18 @@
   <tr>
     <th> Name </th>
     <th> Email </th>
-    <th> </th>
+    <th> facebook user </th>
+    <th> Earnings </th>
+    <th> Payment request </th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
      <td> <%= user.name  %> </td>
      <td> <%= user.email %> </td>
-     <td> <%= 'facebook user' if user.provider == 'facebook' %> </td>
+     <td> <%= user.provider == 'facebook'? 'yes' : 'no' %> </td>
+     <td> <%= link_to 'Earnings', [:admin, user] %> </td>
+     <td> <%= link_to 'payment request', '#' %> </td>
   </tr>
 <% end %>
 </table>

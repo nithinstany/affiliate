@@ -6,5 +6,9 @@ class Admin::UsersController < ApplicationController
     @users  = User.all_users_without_admin
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
 end
 
