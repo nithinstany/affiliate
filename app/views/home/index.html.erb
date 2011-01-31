@@ -8,36 +8,8 @@
     <div id="test">
     </div>
 
-  <% if current_user %>
-    <% content_for :extra_javascripts do %>
-      <script type="text/javascript">
-        $(function()
-          {
 
-
-
-
-             $("#listings > a").each(function ()
-             {
-                var href = $(this).attr('href');
-                $(this).attr('href', href + "&key=<%=current_user.key%>");
-             });
-             var i = 0;
-
-             $("#listings > iframe").each(function ()
-             {
-
-
-
-
-             });
-
-
-          });
-      </script>
-    <%end%>
-  <%end%>
-
+ <%= render :partial => 'shared/add_key_to_links' %>
 
 </div>
 

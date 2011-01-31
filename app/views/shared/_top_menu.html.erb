@@ -3,6 +3,7 @@
   <%= link_to 'Login', new_user_session_path %> &nbsp; | &nbsp;
   <%= link_to image_tag("/images/social-icons/facebook_32.png", :alt => "Sign in with Facebook"), omniauth_authorize_path('user', 'facebook') %>
 <%else-%>
+  <%= link_to 'My Earnings', earnings_path %> &nbsp; | &nbsp;
   <%= link_to 'Logout', destroy_user_session_path %>
 <%end-%>
 

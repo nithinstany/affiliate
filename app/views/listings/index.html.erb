@@ -10,26 +10,7 @@
      <p> Listings are not available for category </p>
   <%end%>
 
-  <% if current_user %>
-    <% content_for :extra_javascripts do %>
-      <script type="text/javascript">
-        $(function()
-          {
-             $("#listings > a").each(function ()
-             {
-                var href = $(this).attr('href');
-                $(this).attr('href', href + "&key=<%=current_user.key%>");
-             });
-             $("#listings > iframe").each(function ()
-             {
-                var href = $(this).attr('href');
-                $(this).attr('href', href + "&key=<%=current_user.key%>");
-             });
-
-          });
-      </script>
-    <%end%>
-  <%end%>
+  <%= render :partial => 'shared/add_key_to_links' %>
 
 
 </div>

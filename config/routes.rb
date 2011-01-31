@@ -1,12 +1,17 @@
 Affiliate::Application.routes.draw do
 
+  resources :earnings
+
   resources :categories do
     resources :listings
   end
 
   root :to => "home#index"
  # devise_for :users, :path_names => { :sign_up => "register" }
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+
+  end
+
   namespace :admin do
     root :to => 'categories#index'
     resources :listings
