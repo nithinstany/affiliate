@@ -5,6 +5,7 @@ gem 'mysql2'
 gem 'devise', :git => 'git://github.com/plataformatec/devise'#, :branch => 'omniauth'
 gem 'omniauth'
 gem 'friendly_id', "~>3.1"
+gem 'nokogiri', '1.4.4'
 
 
 
