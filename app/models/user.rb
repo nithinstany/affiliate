@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation,:is_admin,:username,:remember_me, :name
   before_create :set_key
+  has_many :transactions
 
 
 
@@ -20,6 +21,10 @@ class User < ActiveRecord::Base
 
   def self.all_users_without_admin
     find(:all, :conditions => ['is_admin = ? or is_admin IS NULL', 0])
+  end
+
+  def earnings_total_price
+     self.transactions.sum(:commissions)
   end
 
   private

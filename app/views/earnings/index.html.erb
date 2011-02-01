@@ -1,2 +1,5 @@
-<h1>Earnings#index</h1>
-<p>Find me in app/views/earnings/index.html.erb</p>
+<%= render :partial => 'shared/category_sidebar' %>
+<div id="listings">
+  Earnings : <%= number_to_currency(current_user.earnings_total_price )%>
+</div>
+
