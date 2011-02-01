@@ -7,7 +7,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id], :include => {:transactions => :affiliate_merchant })
   end
 
 end

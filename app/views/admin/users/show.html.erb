@@ -2,3 +2,21 @@
    Earnings of <%= @user.name %>
 <%end%>
 
+
+<table class='listing'>
+  <tr>
+    <th> Commissions </th>
+    <th> Merchant </th>
+
+  </tr>
+
+<% @user.transactions.each do |transaction| %>
+  <tr>
+     <td> <%= number_to_currency(transaction.commissions)  %> </td>
+     <td> <%= transaction.affiliate_merchant.name %></td>
+  </tr>
+<% end %>
+</table>
+
+Total : <%= number_to_currency(@user.earnings_total_price) %>
+
