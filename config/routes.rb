@@ -24,7 +24,9 @@ Affiliate::Application.routes.draw do
     end
     resources :earnings
     resources :pages
-    resources :payment_requests
+    resources :payment_requests do
+      get 'complete', :on => :member
+    end
   end
 
 
