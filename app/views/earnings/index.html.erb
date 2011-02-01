@@ -1,5 +1,22 @@
-<%= render :partial => 'shared/category_sidebar' %>
-<div id="listings">
-  Earnings : <%= number_to_currency(current_user.earnings_total_price )%>
-</div>
+
+
+Total Earnings : <%= number_to_currency(current_user.earnings)%> <br />
+Withdrawals : <%= number_to_currency(current_user.withdrawals )%>
+
+
+
+<% if current_user.remaining_earnings > 0 %>
+
+  <%= form_tag('#') do %>
+   <p> <lable> Enter the amount to withdrawal: </label> <%= text_field_tag('amount') %> </p>
+   <p> <lable> Enter paypal payer_id: </label><%= text_field_tag('paypal_payer_id', (current_user.paypal_info.paypal_id rescue ' ') )%> </p>
+
+
+   <%= submit_tag 'submit'  %>
+
+  <% end %>
+
+
+  <%= render :partial => 'shared/check_amount'%>
+<%end%>
 

@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation,:is_admin,:username,:remember_me, :name
   before_create :set_key
   has_many :transactions
+  has_one :paypal_info
+  has_many :payment_requests
 
 
 
@@ -25,6 +27,21 @@ class User < ActiveRecord::Base
 
   def earnings_total_price
      self.transactions.sum(:commissions)
+  end
+
+  def update_earnings
+    self.update_attribute('earnings',  self.transactions.sum(:commissions))
+  end
+
+  def remaining_earnings
+    self.earnings.to_f - self.withdrawals.to_f
+  end
+
+  def create_payment_request(amount)
+    pr = payment_requests.find_by_state('pending')
+    if pr.blank?
+     payment_requests.create(:amount => amount)
+    end
   end
 
   private

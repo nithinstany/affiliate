@@ -12,19 +12,17 @@
 
 </head>
 <body>
- <div id="header"> <h1> Little surprizes</h1> </div> 
-  <div id='container'> 
+ <div id="header"> <h1> Little surprizes</h1> </div>
+  <div id='container'>
        <div id="user_nav">
-		<%= render :partial => 'shared/links' %>
-        <br />
-        <%= link_to 'Logout', destroy_user_session_path ,:class=> 'link'%>
+		      <%= render :partial => 'shared/links' %>
        </div>
 
 
          <%= yield :heading %>
         <%= yield :actions %>
-        
-     
+
+
 
 
       <%= yield %>

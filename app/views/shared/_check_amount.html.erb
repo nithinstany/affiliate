@@ -1,0 +1,24 @@
+<% if current_user %>
+    <% content_for :extra_javascripts do %>
+      <script type="text/javascript">
+        $(function()
+          {
+            $(":submit").attr('disabled', 'disabled');
+
+            $("#amount").focusout(function() {
+              var amt = parseFloat("<%= current_user.remaining_earnings%>");
+              enterd_amt = parseFloat($("#amount").val());
+              if ((amt >= enterd_amt) && (enterd_amt > 0.0))
+              {
+                $(':submit').removeAttr('disabled')
+              }
+              else
+              {
+                 $(":submit").attr('disabled', 'disabled');
+              }
+            });
+          });
+      </script>
+    <%end%>
+  <%end%>
+

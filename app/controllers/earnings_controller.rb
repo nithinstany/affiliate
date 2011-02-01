@@ -1,4 +1,5 @@
 class EarningsController < ApplicationController
+  before_filter :authenticate_user!
 
   def index
     link_share = AffiliateMerchant.find_by_name('Link Share')
@@ -22,7 +23,25 @@ class EarningsController < ApplicationController
       end
       link_share.update_attribute('end_date', Date.today)
     end
+    current_user.update_earnings
   end
+
+  def create
+    if params[:paypal_payer_id].blank? || current_user.remaining_earnings < params[:amount].to_f
+      flash[:notice] = 'please enter all fields.'
+      redirect_to :back
+    else
+      if current_user.paypal_info.blank?
+        PaypalInfo.create(:paypal_id => params[:paypal_payer_id], :user_id => current_user.id)
+      else
+        current_user.paypal_info.update_attributes({:paypal_id => params[:paypal_payer_id]})
+      end
+      current_user.create_payment_request(params[:amount])
+      flash[:notice] = "Request for payment withdrawal is made."
+      redirect_to :back
+    end
+  end
+
 
   private
 

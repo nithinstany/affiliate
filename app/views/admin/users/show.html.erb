@@ -1,7 +1,9 @@
 <% content_for :heading do %>
    Earnings of <%= @user.name %>
 <%end%>
-
+<% content_for :actions do %>
+  <%= link_to 'Back', :back %>
+<%end%>
 
 <table class='listing'>
   <tr>

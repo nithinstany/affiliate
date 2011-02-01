@@ -1,5 +1,7 @@
 Affiliate::Application.routes.draw do
 
+  get "payment_requests/index"
+
   resources :earnings
 
   resources :categories do
@@ -17,9 +19,12 @@ Affiliate::Application.routes.draw do
     resources :listings
     resources :categories
     resources :affiliate_merchants
-    resources :users
+    resources :users do
+      get 'payment_requests', :on => :member
+    end
     resources :earnings
     resources :pages
+    resources :payment_requests
   end
 
 

@@ -10,5 +10,8 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id], :include => {:transactions => :affiliate_merchant })
   end
 
+  def payment_requests
+     @user = User.find(params[:id], :include => [:payment_requests])
+  end
 end
 

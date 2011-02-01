@@ -18,7 +18,7 @@
      <td> <%= user.email %> </td>
      <td> <%= user.provider == 'facebook'? 'yes' : 'no' %> </td>
      <td> <%= link_to 'Earnings', [:admin, user] %> </td>
-     <td> <%= link_to 'payment request', '#' %> </td>
+     <td> <%= link_to 'payment request', payment_requests_admin_user_path(user) %> </td>
   </tr>
 <% end %>
 </table>
