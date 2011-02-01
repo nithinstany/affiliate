@@ -1,2 +1,29 @@
-<h1>PaymentRequests#index</h1>
-<p>Find me in app/views/payment_requests/index.html.erb</p>
+<% content_for :heading do %>
+   Listing Payment Requests
+<%end%>
+<% content_for :actions do %>
+
+<%end%>
+
+<table>
+  <tr>
+    <th> user </th>
+    <th> requested amount</th>
+    <th> requested Date </th>
+    <th> State </th>
+    <th> </th>
+  </tr>
+
+<% @payment_requests.each do |pr| %>
+  <tr>
+    <td> <%= pr.user.name_or_email %></td>
+    <td> <%= pr.amount %></td>
+    <td> <%= pr.created_at.to_date %></td>
+    <td> <%= pr.state %></td>
+    <td> <%= link_to 'complete', complete_admin_payment_request_path(pr) if pr.state == 'pending'%> </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

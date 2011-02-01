@@ -11,13 +11,14 @@
     <th> State </th>
     <th> Requested Date </th>
 
+
   </tr>
 
 <% @user.payment_requests.each do |pr| %>
   <tr>
      <td> <%= number_to_currency(pr.amount)  %> </td>
      <td> <%= pr.state %> </td>
-     <td> <%= pr.created_at.to_date()  %> </td>
+     <td> <%= pr.created_at.to_date  %> </td>
   </tr>
 <% end %>
 </table>

@@ -37,6 +37,11 @@ class User < ActiveRecord::Base
     self.earnings.to_f - self.withdrawals.to_f
   end
 
+
+  def name_or_email
+    name.blank?? email : name
+  end
+
   def create_payment_request(amount)
     pr = payment_requests.find_by_state('pending')
     if pr.blank?
