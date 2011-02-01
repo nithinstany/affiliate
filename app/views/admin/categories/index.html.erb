@@ -1,13 +1,13 @@
+<div class="heading">
 <% content_for :heading do %>
-   Listing categories
+   <div class="left" style="width:50%;"><h1 class="listHeading">Listing categories</h1></div>
 <%end%>
 <% content_for :actions do %>
-   <%= link_to 'New Category', new_admin_category_path %>
+   <div class="right button" style="width:48%;"><%= link_to 'New Category', new_admin_category_path %></div>
 <%end%>
+</div>
 
-
-
-<table>
+<table class="listing">
   <tr>
     <th>Name</th>
        <th></th>

@@ -1,11 +1,13 @@
+<div class="heading">
 <% content_for :heading do %>
-   New category
+   <div class="left" style="width:50%;"><h1 class="listHeading">New category</h1></div>
 <%end%>
-<% content_for :actions do %>
-  <%= link_to 'Back', admin_categories_path %>
-<%end%>
-
-
+</div>
 
 <%= render 'form' %>
+
+
+<div class="links">
+ <%= link_to 'Back', admin_categories_path %>
+</div>
 
