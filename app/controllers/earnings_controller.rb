@@ -1,6 +1,4 @@
 class EarningsController < ApplicationController
-  require 'open-uri'
-  require 'nokogiri'
 
   def index
     link_share = AffiliateMerchant.find_by_name('Link Share')
