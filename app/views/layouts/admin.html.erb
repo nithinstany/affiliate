@@ -12,24 +12,20 @@
 
 </head>
 <body>
-  <div id= 'wrapper'>
-    <div id="header">
-      <div id="logo" class = 'left'>  <h1>little surprizes  </h1>  </div>
-      <div id="global_links" class = 'right'>
-        <%= link_to 'Logout', destroy_user_session_path %>
-      </div>
-      <div class = 'clear'> </div>
-      <div id="menu">
-         <%= render :partial => 'shared/links' %>
-      </div>
-    </div>
+ <div id="header"> <h1> Little surprizes</h1> </div> 
+  <div id='container'> 
+       <div id="user_nav">
+		<%= render :partial => 'shared/links' %>
+        <br />
+        <%= link_to 'Logout', destroy_user_session_path ,:class=> 'link'%>
+       </div>
 
-    <div id='content'>
-      <div id='top_bar'>
-        <div id='content_heading' class ='left'> <h1><%= yield :heading %> </h1> </div>
-        <div id= 'actions' class='right'> <%= yield :actions %> </div>
-        <div class = 'clear'> </div>
-      </div>
+
+         <%= yield :heading %>
+        <%= yield :actions %>
+        
+     
+
 
       <%= yield %>
      </div>
