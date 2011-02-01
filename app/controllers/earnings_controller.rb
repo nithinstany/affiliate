@@ -27,8 +27,9 @@ class EarningsController < ApplicationController
   end
 
   def create
-    if params[:paypal_payer_id].blank? || current_user.remaining_earnings < params[:amount].to_f
+    if params[:paypal_payer_id].blank? || params[:amount].blank? || current_user.remaining_earnings < params[:amount].to_f
       flash[:notice] = 'please enter all fields.'
+      flash[:notice] = 'you enterd more than your earnings' if current_user.remaining_earnings < params[:amount].to_f
       redirect_to :back
     else
       if current_user.paypal_info.blank?
