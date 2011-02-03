@@ -19,8 +19,8 @@
      <td> <%= user.name  %> </td>
      <td> <%= user.email %> </td>
      <td> <%= user.provider == 'facebook'? 'yes' : 'no' %> </td>
-     <td> <%= link_to 'Earnings', [:admin, user] %> </td>
-     <td> <%= link_to 'payment request', payment_requests_admin_user_path(user) %> </td>
+     <td> <%= link_to 'Earnings', [:admin, user] unless user.transactions.blank? %> </td>
+     <td> <%= link_to 'payment request', payment_requests_admin_user_path(user) unless user.payment_requests.blank? %> </td>
   </tr>
 <% end %>
 </table>
