@@ -1,13 +1,18 @@
-<% content_for :heading do %>
-   Showing Category
-<%end%>
-<% content_for :actions do %>
+
+<div class="heading">
+   <div class="left" style="width:99%;"><h1 class="listHeading">  Showing Category</h1></div>
+</div>
+
+
+<table class="show">
+  <tr>
+    <th>Name:</th>
+    <td><%= @category.name %></td>
+  </tr>
+</table>
+
+
+<div class="links">
    <%= link_to 'Edit', edit_admin_category_path(@category) %> |
    <%= link_to 'Back', admin_categories_path %>
-<%end%>
-
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
-
+</div>

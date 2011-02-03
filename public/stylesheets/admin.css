@@ -164,6 +164,7 @@ p.notice{background-color:#D5FFCE;padding:5px 10px;border:1px solid #9ADF8F;}
 .left{float:left;}
 .right{float:right;}
 
+
 /** HEADER **/
 
 div#header{
@@ -323,11 +324,13 @@ table.show td span{margin-left:20px;color:red;font-weight:bold;}
 div.field, div.actions, div.fields {padding:10px 20px;}
 
 div.field label{color:#000; }
-div.field input,select{padding:6px 10px;border:1px solid #ddd;-moz-border-radius:3px;-webkit-border-radius:3px;}
+div.field input,select,textarea{padding:6px 10px;border:1px solid #ddd;-moz-border-radius:3px;-webkit-border-radius:3px;margin-bottom:10px;}
 
 
-textarea{width:255px;}
+div.field textarea{width:255px;height:150px;}
 
+div.field textarea.large{width:665px;height:200px;}
+.jHtmlArea{border:1px solid #ddd;}
 
 .field_with_errors input, .field_with_errors textarea, .field_with_errors select{border:1px solid red;}
 

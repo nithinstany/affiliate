@@ -1,21 +1,22 @@
-<% content_for :heading do %>
-  showing listing
-<%end%>
-<% content_for :actions do %>
+<div class="heading">
+  <div class="left" style="width:99%;"><h1 class="listHeading">Showing listing</h1></div>
+</div>
+<table class="show">
+<tr>
+  <th>Banner:</th>
+  <td><%= raw(@admin_listing.banner) %></td>
+</tr>
+<tr>
+  <th>Category:</th>
+  <td><%= @admin_listing.category.name %></td>
+</tr>
+<tr>
+  <th>Affiliate:</th>
+  <td><%= @admin_listing.affiliate_merchant.name %></td>
+</tr>
+</table>
+<div class="links">
   <%= link_to 'Edit', edit_admin_listing_path(@admin_listing) %> |
   <%= link_to 'Back', admin_listings_path %>
-<%end%>
-
-<p>
-  <b>Banner:</b>
-  <%= raw(@admin_listing.banner) %>
-</p>
-<p>
-  <b>Category:</b>
-  <%= @admin_listing.category.name %>
-</p>
-<p>
-  <b>Affiliate:</b>
-  <%= @admin_listing.affiliate_merchant.name %>
-</p>
+</div>
 

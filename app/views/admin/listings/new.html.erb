@@ -1,9 +1,11 @@
+<div class="heading">
 <% content_for :heading do %>
-  New listing
+   <div class="left" style="width:99%;"><h1 class="listHeading"> New listing</h1></div>
 <%end%>
-<% content_for :actions do %>
-  <%= link_to 'Back', admin_listings_path %>
-<%end%>
+</div>
 
 <%= render 'form' %>
 
+<div class="links">
+  <%= link_to 'Back', admin_listings_path %>
+</div>

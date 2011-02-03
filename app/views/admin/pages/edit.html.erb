@@ -1,9 +1,9 @@
-<% content_for :heading do %>
-   Editing page
-<%end%>
-<% content_for :actions do %>
-  <%= link_to 'Show', [:admin, @page] %> | <%= link_to 'Back', admin_pages_path %>
-<%end%>
+<div class="heading">
+  <div class="left" style="width:99%;"><h1 class="listHeading">Editing page</h1></div>
+</div>
 
 <%= render 'form' %>
 
+<div class="links">
+  <%= link_to 'Show', [:admin, @page] %> | <%= link_to 'Back', admin_pages_path %>
+</div>
