@@ -13,7 +13,7 @@ Affiliate::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
 
   end
-
+  resources :users
   namespace :admin do
     root :to => 'categories#index'
     resources :listings
