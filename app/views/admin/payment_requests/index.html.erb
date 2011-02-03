@@ -18,7 +18,7 @@
     <td> <%= pr.amount %></td>
     <td> <%= pr.created_at.to_date %></td>
     <td> <%= pr.state %></td>
-    <td> <%= link_to 'complete', complete_admin_payment_request_path(pr) if pr.state == 'pending'%> </td>
+    <td> <%= link_to 'complete', complete_admin_payment_request_path(pr) if pr.state == 'pending' %> </td>
   </tr>
 <% end %>
 </table>
