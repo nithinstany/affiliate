@@ -1,4 +1,4 @@
-<% if @user.uid.blank? %>
+
 
 <h1> Edit user </h1>
 
@@ -12,23 +12,29 @@
   <p><%= f.label :address %></p>
   <p><%= f.text_field :address %></p>
 
+<% if @user.paypal_info.blank? %>
+<% @user.build_paypal_info %>
+    <%= f.fields_for :paypal_info do |d| %>
+       pay_pal id : <%= d.text_field :paypal_id %>
+  <%end%>
+<%else%>
+  <%= f.fields_for :paypal_info do |d| %>
+  pay_pal id : <%= d.text_field :paypal_id %>
+  <%end%>
+<%end%>
 
 
-<p><%= f.label :email %></p>
+  <p><%= f.label :email %></p>
   <p><%= f.text_field :email %></p>
-
+<% if @user.uid.blank? %>
   <p><%= f.label :password %></p>
   <p><%= f.password_field :password %></p>
 
   <p><%= f.label :password_confirmation %></p>
   <p><%= f.password_field :password_confirmation %></p>
-
+<%end%>
 
 
   <p><%= f.submit "Update" %></p>
 <% end %>
-
-<%else%>
-
-<%end%>
 
