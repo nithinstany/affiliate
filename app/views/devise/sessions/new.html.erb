@@ -1,11 +1,10 @@
-<br />
-<div class="login">
+<div id="login_container">
 
-<h2>Sign in</h2>
-
+<div id="login_header">Sign in</div>
+<div id="login">
 <%= form_for(resource_name, resource, :url => session_path(resource_name)) do |f| %>
 
-  <p><%= f.label :email %><%= f.text_field :email %></p>
+  <p><%= f.label :email %></p><p><%= f.text_field :email %></p>
 
   <p><%= f.label :password %></p>
   <p><%= f.password_field :password %></p>
@@ -14,9 +13,9 @@
     <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
   <% end -%>
 
-  <p class="submit"><%= f.submit "Sign in" %></p>
+  <p class="submit"><%= f.submit "Sign in" ,:class=>'btn' %></p>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
-
+</div>
 </div>

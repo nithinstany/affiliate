@@ -45,6 +45,55 @@ body{
 .right{float:right;}
 .clear{clear:both;}
 
+div#login_container {
+   width: 450px;
+   min-height: 350px;
+   margin:20px auto;
+   border:1px solid #c4c4c4;
+   color:#333;
+   background-color:#fbfbfb;
+   margin-bottom:10px;
+   -webkit-border-radius:2px;
+   -moz-border-radius:2px;
+}
+
+div#login_header{
+	border-bottom:1px solid #c4c4c4;
+	height:50px;
+	line-height:50px;
+	padding-left:20px;
+	color:#000;
+	font-size:20px;
+	background:#FFFFFF url(/images/login_bg.png) repeat-x bottom left;
+}
+		
+div#login{padding:20px;}		
+		
+div#login input{
+	padding:8px 10px;
+	margin-bottom:15px;
+	border:1px solid #ddd;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	width:350px;
+}
+
+div#login input:focus{border:1px solid #999;}
+
+div#login input.btn{
+	background-color:#222;
+	border:1px solid #ddd;
+	color:#fff;
+	width:100px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+
+div#login a{text-decoration:none;color:#FB006A;}
+div#login a:hover{text-decoration:underline;color:#000;}
+
+ul#social-icons li{list-style:none;}
+
 .header{
      backgroxund: #a50303 url('/imagesx/5.jpg')repeat-x;
      height:50px;
