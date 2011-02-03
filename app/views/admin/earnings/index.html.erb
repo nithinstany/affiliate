@@ -1,8 +1,35 @@
 <div class="heading">
 <% content_for :heading do %>
-   <div class="left" style="width:50%;"><h1 class="listHeading">Listing Earnings</h1></div>
+   <div class="left" style="width:90%;"><h1 class="listHeading">Listing Earnings</h1></div>
 <%end%>
 <% content_for :actions do %>
 
 <%end%>
 </div>
+
+<div style='width:90%'>
+  <% AffiliateMerchant.all.each do |af|%>
+    <p>  <%= af.name %> : <%= number_to_currency(af.total_earnings) %> </p>
+  <%end%>
+</div>
+
+<table class="listing">
+  <tr>
+    <th>Name</th>
+    <th>Merchant</th>
+    <th>commissions</th>
+  </tr>
+
+<% @transactions.each do |tran| %>
+  <tr>
+    <td><%= tran.user.name_or_email %></td>
+    <td><%= tran.affiliate_merchant.name %> </td>
+    <td><%= number_to_currency(tran.commissions) %></td>
+
+  </tr>
+<% end %>
+</table>
+
+
+Total : <%= number_to_currency(@transactions.sum(:commissions)) %>
+

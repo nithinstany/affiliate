@@ -14,7 +14,7 @@ class EarningsController < ApplicationController
         if i > 0
           value = line.split(' ')
           member = User.find_by_key(value[0])
-          if member
+          if member && value[10].to_f > 0.00
             date = value[11].split('/').reverse!.join('-')
             link_share.transactions.create!(:user_id => member.id, :process_date => date , :commissions => value[10] )
           end

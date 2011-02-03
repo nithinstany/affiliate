@@ -3,6 +3,7 @@ class Admin::EarningsController < ApplicationController
   before_filter :require_admin
 
   def index
+    @transactions = Transaction.non_zero
   end
 
 end
