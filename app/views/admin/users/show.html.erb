@@ -15,7 +15,7 @@
 <% @user.transactions.each do |transaction| %>
   <tr>
      <td> <%= number_to_currency(transaction.commissions)  %> </td>
-     <td> <%= transaction.affiliate_merchant.name %></td>
+     <td> <%= transaction.affiliate_merchant.name %> </td>
   </tr>
 <% end %>
 </table>
