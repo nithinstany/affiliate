@@ -257,7 +257,7 @@ div#user_nav a.link{background-color:#d4c7b4;padding:10px 70px;margin:0px 10px;c
 }
 
 .heading{background-color:#620500;
-height:30px;}
+border-top:1px solid #8a4747;height:31px;overflow:hidden;width:99.6%; padding-right:2px;}
 
 h1.listHeading{font-size:14px;color:#fff;background: url(/images/downarrow.gif) no-repeat left;padding:5px 22px;}
 
@@ -268,7 +268,7 @@ h1.listHeading{font-size:14px;color:#fff;background: url(/images/downarrow.gif) 
 #container h1 span.button:hover a{background-color:#eee;background-image:none;color:#7A0E74;
 }
 
-table.listing{width:99.7%;position:relative;top:-20px;left:0px;}
+table.listing{width:99.7%;}
 
 
 table.listing tr th{
@@ -330,6 +330,9 @@ div.field input,select,textarea{padding:6px 10px;border:1px solid #ddd;-moz-bord
 div.field textarea{width:255px;height:150px;}
 
 div.field textarea.large{width:665px;height:200px;}
+
+.actions input[type=submit]{padding:10px;}
+
 .jHtmlArea{border:1px solid #ddd;}
 
 .field_with_errors input, .field_with_errors textarea, .field_with_errors select{border:1px solid red;}

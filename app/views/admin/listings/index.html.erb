@@ -1,12 +1,10 @@
-<div class="heading">
+
 <% content_for :heading do %>
    <div class="left" style="width:50%;"><h1 class="listHeading">Listings</h1></div>
 <%end%>
 <% content_for :actions do %>
   <div class="right button" style="width:48%;"><%= link_to 'New Listing', new_admin_listing_path %></div>
 <%end%>
-</div>
-
 
 <table class="listing">
   <tr>
@@ -16,7 +14,7 @@
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+</tr>
 
 <% @admin_listings.each do |admin_listing| %>
   <tr>

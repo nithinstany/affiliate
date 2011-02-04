@@ -92,10 +92,11 @@ div#login input.btn{
 div#login a{text-decoration:none;color:#FB006A;}
 div#login a:hover{text-decoration:underline;color:#000;}
 
+input#user_remember_me[type=checkbox]{width:12px;border:1px solid #ddd;border:none;}
+
 ul#social-icons li{list-style:none;}
 
 .header{
-     backgroxund: #a50303 url('/imagesx/5.jpg')repeat-x;
      height:50px;
      padding:10px 30px;
 
@@ -106,8 +107,8 @@ ul#social-icons li{list-style:none;}
 }
 
 .headerLeft h1{
-          color:#000;
-          font-size:250%;
+      color:#000;
+      font-size:250%;
 	  padding-top:10px;
 }
 
@@ -118,13 +119,12 @@ ul#social-icons li{list-style:none;}
        text-align:right;
        color:#000;
        size:12px;
-
 }
 
 .headerRight a{
-         color:#000;
-         size:12px;
-text-decoration:none;
+        color:#000;
+        size:12px;
+		text-decoration:none;
 }
 
 .header a:hover{
@@ -307,11 +307,10 @@ background:url('/images/bullet.jpg') no-repeat;
 }
 
 .categoryleft{
-height:30px;
-width:18%;
-
--moz-border-radius: 5px;
-margin-bottom:1px;
+	height:30px;
+	width:18%;
+	-moz-border-radius: 5px;
+	margin-bottom:1px;
 }
 
 .categoryleft h1{
