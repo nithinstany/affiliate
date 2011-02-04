@@ -46,10 +46,7 @@ class User < ActiveRecord::Base
   end
 
   def create_payment_request(amount)
-    pr = payment_requests.find_by_state('pending')
-    if pr.blank?
      payment_requests.create(:amount => amount)
-    end
   end
 
   private
