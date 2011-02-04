@@ -1,11 +1,8 @@
-<div class="heading">
 <% content_for :heading do %>
+  <div class="heading">
    <div class="left" style="width:90%;"><h1 class="listHeading">Listing Earnings</h1></div>
+  </div>
 <%end%>
-<% content_for :actions do %>
-
-<%end%>
-</div>
 
 <div style='width:90%'>
   <% AffiliateMerchant.all.each do |af|%>

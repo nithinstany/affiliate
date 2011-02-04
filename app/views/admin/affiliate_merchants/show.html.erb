@@ -1,13 +1,20 @@
-
 <% content_for :heading do %>
-  Showing affiliate
+  <div class="heading">
+    <div class="left" style="width:90%;"><h1 class="listHeading">Showing affiliate</div>
+  </div>
 <%end%>
+
 <% content_for :actions do %>
-  <%= link_to 'Edit', edit_admin_affiliate_merchant_path(@affiliate_merchant) %> |
-  <%= link_to 'Back', admin_affiliate_merchants_path %>
+  <div class="links">
+    <%= link_to 'Edit', edit_admin_affiliate_merchant_path(@affiliate_merchant) %> |
+    <%= link_to 'Back', admin_affiliate_merchants_path %>
+  </div>
 <%end%>
-<p>
-  <b>Name:</b>
-  <%= @affiliate_merchant.name %>
-</p>
+
+<table class="show">
+  <tr>
+    <th>Name:</th>
+    <td><%= @affiliate_merchant.name %></td>
+  </tr>
+</table>
 

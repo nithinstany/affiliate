@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
   before_filter :require_admin
 
   def index
-    @users  = User.all_users_without_admin
+    @users  = User.all #all_users_without_admin
   end
 
   def show
