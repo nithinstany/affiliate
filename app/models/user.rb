@@ -54,8 +54,5 @@ class User < ActiveRecord::Base
   def set_key
     self.key = ActiveSupport::SecureRandom.hex(40)
   end
-
-
-
 end
 
