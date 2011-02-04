@@ -27,9 +27,9 @@ class EarningsController < ApplicationController
   end
 
   def create
-    if params[:paypal_payer_id].blank? || params[:amount].blank? || current_user.remaining_earnings < params[:amount].to_f
+    if params[:paypal_payer_id].blank? || params[:amount].blank? || current_user.available_for_withdrawal < params[:amount].to_f
       flash[:notice] = 'please enter all fields.'
-      flash[:notice] += 'you enterd more than your earnings' if current_user.remaining_earnings < params[:amount].to_f
+      flash[:notice] += 'you enterd more than amount awailable for withdrawal' if current_user.available_for_withdrawal < params[:amount].to_f
       redirect_to :back
     else
       if current_user.paypal_info.blank?
@@ -38,7 +38,7 @@ class EarningsController < ApplicationController
         current_user.paypal_info.update_attributes({:paypal_id => params[:paypal_payer_id]})
       end
       current_user.create_payment_request(params[:amount])
-      flash[:notice] = "Request for payment withdrawal is made."
+      flash[:notice] = "You have requested to for a withdrawal of $#{params[:amount]}. Your paypal account will be credited witin two days."
       redirect_to :back
     end
   end

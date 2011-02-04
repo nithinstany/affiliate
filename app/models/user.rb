@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   end
 
   def self.all_users_without_admin
-    find(:all, :conditions => ['is_admin = ? or is_admin IS NULL', 0])
+    all.where('is_admin = ? or is_admin IS NULL', 0)
   end
 
   def earnings_total_price
@@ -37,6 +37,9 @@ class User < ActiveRecord::Base
     self.earnings.to_f - self.withdrawals.to_f
   end
 
+  def available_for_withdrawal
+    self.earnings.to_f - self.withdrawals.to_f - self.payment_requests.pending_payments.total.first.amount.to_f
+  end
 
   def name_or_email
     name.blank?? email : name
