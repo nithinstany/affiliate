@@ -3,7 +3,11 @@ class Admin::PaymentRequestsController < ApplicationController
   before_filter :require_admin
 
   def index
-    @payment_requests = PaymentRequest.order('state DESC')
+    if params[:state] == "pending"
+      @payment_requests = PaymentRequest.pending_payments.order('state DESC')
+    else
+      @payment_requests = PaymentRequest.order('state DESC')
+    end
   end
 
 

@@ -14,6 +14,8 @@
   <tr>
     <th>Name</th>
     <th>Merchant</th>
+    <th>Order id </th>
+    <th> Sales </th>
     <th>commissions</th>
   </tr>
 
@@ -21,6 +23,8 @@
   <tr>
     <td><%= tran.user.name_or_email %></td>
     <td><%= tran.affiliate_merchant.name %> </td>
+    <td><%= tran.order_id %> </td>
+    <td><%= number_to_currency(tran.sales) %> </td>
     <td><%= number_to_currency(tran.commissions) %></td>
 
   </tr>

@@ -6,6 +6,10 @@
   <li> <%= link_to "Earnings", admin_earnings_path %> </li>
   <li> <%= link_to "Pages", admin_pages_path %> </li>
   <li> <%= link_to "Payment Requests", admin_payment_requests_path %> </li>
+  <li> <%= link_to "pending Payment Requests", admin_payment_requests_path(:state => 'pending') %> </li>
+  <li> <%= link_to "Settings", admin_settings_path %> </li>
+  <li> <%= link_to "shopping transactions", admin_earnings_path %> </li>
+  <li> <%= link_to "Reports", admin_reports_path %> </li>
   <li> <%= link_to 'Logout', destroy_user_session_path %> </li>
 </ul>
 

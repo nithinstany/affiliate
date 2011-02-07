@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
+  scope :total_withdrawals, select('sum(withdrawals) as amount')
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation,:is_admin,:username,:remember_me, :name, :address, :paypal_info_attributes
@@ -46,8 +46,16 @@ class User < ActiveRecord::Base
   end
 
   def create_payment_request(amount)
-     payment_requests.create(:amount => amount)
+    transaction_fee =  Setting.find_by_reference('transaction_fee')
+    fixed_fee = Setting.find_by_reference('fixed_fee')
+    amt_tranfee = (amount * transaction_fee.value.to_f)/100.00
+
+    final_amount = (amount - amt_tranfee - fixed_fee.value.to_f)
+    payment_requests.create(:amount => final_amount, :transaction_fee => amt_tranfee, :fixed_fee => fixed_fee.value.to_f )
   end
+
+
+
 
   private
 

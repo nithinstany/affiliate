@@ -1,0 +1,25 @@
+<% content_for :heading do %>
+   <div class="left" style="width:50%;"><h1 class="listHeading"> settings </h1></div>
+<%end%>
+<% content_for :actions do %>
+<%end%>
+
+
+<table class="listing">
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+    <th></th>
+  </tr>
+
+<% @settings.each do |setting| %>
+  <tr>
+    <td><%= setting.name %></td>
+    <td> <%= (setting.reference == "transaction_fee")? (setting.value.to_s + "%") : (number_to_currency(setting.value))  %></td>
+    <td><%= link_to 'Edit', edit_admin_setting_path(setting) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

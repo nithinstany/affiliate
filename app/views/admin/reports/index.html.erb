@@ -1,0 +1,4 @@
+<h5> Total earnings by the admin : <%= number_to_currency(current_user.earnings_total_price) %> </h5>
+<h5> Total withdrawal by users : <%= number_to_currency(User.total_withdrawals.first.amount) %> </h5>
+<h5> Total Transaction fee earned : <%= number_to_currency(PaymentRequest.total_transaction_fee)%> </h5>
+
