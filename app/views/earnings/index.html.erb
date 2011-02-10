@@ -1,12 +1,18 @@
+<h1> My Account </h1>
+
+<h2> Balance : </h2>
 
 
-<p>Total Earnings : <%= number_to_currency(current_user.earnings)%> </p>
-<p>Total Withdrawals : <%= number_to_currency(current_user.withdrawals )%> </p>
-<p>Requests being processed : <%= number_to_currency(current_user.payment_requests.pending_payments.total.first.amount.to_f) %> </p>
-<p>Amount available for withdrawal : <%= number_to_currency(current_user.available_for_withdrawal) %> </p>
+<table>
+  <tr><th> Total Earnings : </th> <td> <%= number_to_currency(current_user.earnings)%> </td> </tr>
+  <tr><th> Total Withdrawals :</th> <td> <%= number_to_currency(current_user.withdrawals )%> </td> </tr>
+  <tr><th> Requests being processed :</th> <td> <%= number_to_currency(calculate_pending_total) %> </td> </tr>
+  <tr><th> Amount available for withdrawal :</th> <td> <%= number_to_currency(current_user.available_for_withdrawal) %> </td> </tr>
+  <tr><th> Minimum request amount : </th> <td> <%= number_to_currency(Setting.minimum_fee.value) %> </td> </tr>
+</table>
 
 
-<p>Minimum request amount : <%= number_to_currency(Setting.minimum_fee.value) %> </p>
+
 <br />
 <% if current_user.payment_requests.pending_payments.blank? %>
   <% if current_user.available_for_withdrawal > 0 %>

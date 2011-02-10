@@ -5,27 +5,27 @@ class EarningsController < ApplicationController
 
     link_share = AffiliateMerchant.find_by_name('Link Share')
     unless link_share.blank?
-      start_date = convert_date_to_string(link_share.end_date)
-      end_date = convert_date_to_string(Date.today)
-
-      system("rm #{Rails.root}/public/link-share-report.txt") if File.exists?("#{Rails.root}/public/link-share-report.txt")
-      system("wget -O #{Rails.root}/public/link-share-report.txt -S \"http://cli.linksynergy.com/cli/publisher/reports/downloadReport.php?bdate=#{start_date}&edate=#{end_date}&cuserid=shashank123&cpi=isiritech99&eid=vXQMo6zjz3Y\"")
-      i = 0
-      File.new("#{Rails.root}/public/link-share-report.txt").each_line do |line|
-        if i > 0
-          value = line.split(' ')
-          member = User.find_by_key(value[0])
-          if member && value[10].to_f > 0.00
-            date = value[11].split('/').reverse!.join('-')
-            link_share.transactions.create!(:user_id => member.id, :process_date => date , :commissions => value[10], :orderid => value[4],:sales => value[8]  )
+      unless link_share.end_date == Date.today
+        start_date = convert_date_to_string(link_share.end_date)
+        end_date = convert_date_to_string(Date.today)
+        system("rm #{Rails.root}/public/link-share-report.txt") if File.exists?("#{Rails.root}/public/link-share-report.txt")
+        system("wget -O #{Rails.root}/public/link-share-report.txt -S \"http://cli.linksynergy.com/cli/publisher/reports/downloadReport.php?bdate=#{start_date}&edate=#{end_date}&cuserid=shashank123&cpi=isiritech99&eid=vXQMo6zjz3Y\"")
+        i = 0
+        File.new("#{Rails.root}/public/link-share-report.txt").each_line do |line|
+          if i > 0
+            value = line.split(' ')
+            member = User.find_by_key(value[0])
+            if member && value[10].to_f > 0.00
+              date = value[5].split('/').reverse!.join('-')
+              link_share.transactions.create!(:user_id => member.id, :process_date => date , :commissions => value[10], :orderid => value[4],:sales => value[8]  )
+            end
           end
+          i +=1
         end
-        i +=1
+        link_share.update_attribute('end_date', Date.today)
       end
-      link_share.update_attribute('end_date', Date.today)
     end
     current_user.update_earnings
-
   end
 
   def create

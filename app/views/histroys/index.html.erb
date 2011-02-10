@@ -1,0 +1,55 @@
+<h1> Your Histroy Details </h1>
+
+<h2> Withdrawals: </h2> <!-- sidebar left -->
+<table>
+   <tr>
+     <th> Amount </th>
+     <th> Paid Date </th>
+   </tr>
+  <% current_user.payment_requests.completed_payments.each do |tr| %>
+    <tr>
+      <td> <%= number_to_currency(tr.total_amount) %> </td>
+      <td> <%= tr.updated_at.to_date %> </td>
+    </tr>
+  <%end%>
+</table>
+Total : <%= number_to_currency(calculate_paid_total) %>
+
+<h2> Pending withdrawals: </h2> <!--right -->
+<% unless current_user.payment_requests.pending_payments.blank? %>
+  <table>
+     <tr>
+       <th> Amount </th>
+       <th> Requested date </th>
+     </tr>
+    <% current_user.payment_requests.pending_payments.each do |tr| %>
+      <tr>
+        <td> <%= number_to_currency(tr.total_amount) %></td>
+        <td> <%= tr.created_at.to_date %></td>
+      </tr>
+    <%end%>
+  </table>
+<%else%>
+  <p> You are not made any pending request. </p>
+<%end%>
+
+<h2> Transaction: </h2>
+<table>
+   <tr>
+     <th> Order Id </th>
+     <th> Transaction Date </th>
+     <th> Sales </th>
+     <th> Commissions</th>
+     <th> Affiliate Merchant name</th>
+   </tr>
+  <% current_user.transactions.each do |tr| %>
+    <tr>
+      <td> <%= tr.orderid %></td>
+      <td> <%= tr.tranactiondate %></td>
+      <td> <%= number_to_currency(tr.sales) %></td>
+      <td> <%= number_to_currency(tr.commissions) %> </td>
+      <td> <%= tr.affiliate_merchant.name %> </td>
+    </tr>
+  <%end%>
+</table>
+

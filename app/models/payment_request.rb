@@ -8,7 +8,11 @@ class PaymentRequest < ActiveRecord::Base
   scope :total_fixed_fee, select('sum(fixed_fee) as amount')
 
   def self.total_transaction_fee
-    self.completed_payments.total_trans_fee_earned.first.amount + self.completed_payments.total_fixed_fee.first.amount
+    self.completed_payments.total_trans_fee_earned.first.amount + self.completed_payments.total_fixed_fee.first.amount rescue 0
+  end
+
+  def total_amount #
+    amount + transaction_fee + fixed_fee
   end
 
 end

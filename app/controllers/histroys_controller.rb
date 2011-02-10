@@ -1,0 +1,4 @@
+class HistroysController < ApplicationController
+
+end
+

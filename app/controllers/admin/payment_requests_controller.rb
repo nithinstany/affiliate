@@ -16,7 +16,7 @@ class Admin::PaymentRequestsController < ApplicationController
   def complete
     pr = PaymentRequest.find(params[:id])
     pr.update_attribute('state', 'completed')
-    pr.user.update_attribute('withdrawals', (pr.user.withdrawals + pr.amount))
+    pr.user.update_attribute('withdrawals', (pr.user.withdrawals + pr.total_amount))
 
     redirect_to params[:u]? payment_requests_admin_user_path(params[:u]) :  admin_payment_requests_path
   end

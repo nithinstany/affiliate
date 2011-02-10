@@ -6,6 +6,7 @@
   <% if current_user.is_admin? %>
      <%= link_to 'Administration', admin_root_path %> &nbsp; | &nbsp;
   <%end%>
+  <%= link_to "Histroy", histroys_path %> &nbsp; | &nbsp;
   <%= link_to 'Edit Details', edit_user_path(current_user.id) %> &nbsp; | &nbsp;
   <%= link_to 'My Earnings', earnings_path %> &nbsp; | &nbsp;
   <%= link_to 'Logout', destroy_user_session_path %>
