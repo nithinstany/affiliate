@@ -1,6 +1,8 @@
 Affiliate::Application.routes.draw do
 
 
+  resources :histroys
+
   resources :earnings
 
   resources :categories do
