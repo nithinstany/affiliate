@@ -4,9 +4,9 @@
   </div>
 <%end%>
 
-<div style='width:90%'>
+<div style='width:90%;margin:10px;'>
   <% AffiliateMerchant.all.each do |af|%>
-    <p>  <%= af.name %> : <%= number_to_currency(af.total_earnings) %> </p>
+    <%= af.name %> : <%= number_to_currency(af.total_earnings) %> &nbsp;&nbsp;
   <%end%>
 </div>
 
@@ -33,5 +33,5 @@
 </table>
 
 
-Total : <%= number_to_currency(@transactions.sum(:commissions)) %>
+<div class="total right">Total : <%= number_to_currency(@transactions.sum(:commissions)) %>
 

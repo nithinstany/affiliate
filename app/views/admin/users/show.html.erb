@@ -1,9 +1,10 @@
 <% content_for :heading do %>
-   Earnings of <%= @user.name %>
+  
+<div class="heading">
+   <div class="left" style="width:90%;"><h1 class="listHeading"> Earnings of <%= @user.name %></h1></div>
+  </div>
 <%end%>
-<% content_for :actions do %>
-  <%= link_to 'Back', :back %>
-<%end%>
+
 
 <table class='listing'>
   <tr>
@@ -20,5 +21,11 @@
 <% end %>
 </table>
 
-Total : <%= number_to_currency(@user.earnings_total_price) %>
+<div class="total right">Total : <%= number_to_currency(@user.earnings_total_price) %></div>
+
+<% content_for :actions do %>
+<div class="right">
+  <%= link_to 'Back', :back %>
+</div>
+<%end%>
 
