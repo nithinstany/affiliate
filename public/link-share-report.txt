@@ -1,11 +1,1 @@
-﻿Member ID	Merchant ID	Merchant Name	Order ID	Transaction Date	Transaction Time	SKU Number	Sales($)	Quantity	Commissions($)	Process Date	Process Time
-972821eaa923d08d2afbf62d029b7d333e66b09a24f46d52f37b75c54edf24e3535188d873f231e8  1234 Advertiser Y  2163  1/31/2002  8:58  32  7.99  1 0.39    2/1/2002    12:46
-972821eaa923d08d2afbf62d029b7d333e66b09a24f46d52f37b75c54edf24e3535188d873f231e8  567  Advertiser Z  3020  1/30/2002 20:42  22 0.0395 1 0.00    2/1/2002    17:46
-972821eaa923d08d2afbf62d029b7d333e66b09a24f46d52f37b75c54edf24e3535188d873f231e8  567  Advertiser Z  3323  1/30/2002 18:53  23 0.0295 1 0.00    2/1/2002    17:46
-916350b4b5c579cc6cbffeec207445f73754a8e33566f238ac3065a5604e366c978f3cc218c432e6  1234 Advertiser Y  2163  1/31/2002  8:58  32  7.99  1 0.39    2/1/2002    12:46
-916350b4b5c579cc6cbffeec207445f73754a8e33566f238ac3065a5604e366c978f3cc218c432e6  567  Advertiser Z  3020  1/30/2002 20:42  22 0.0395 1 0.00    2/1/2002    17:46
-916350b4b5c579cc6cbffeec207445f73754a8e33566f238ac3065a5604e366c978f3cc218c432e6  567  Advertiser Z  3323  1/30/2002 18:53  23 0.0295 1 0.00    2/1/2002    17:46
-13af56cbce939b3c8a9f304ae8dfdcb22551684c9f0e81db31c433db1c1d41161afbfde71051f9bd  1234 Advertiser Y  2163  1/31/2002  8:58  32  7.99  1 0.39    2/1/2002    12:46
-13af56cbce939b3c8a9f304ae8dfdcb22551684c9f0e81db31c433db1c1d41161afbfde71051f9bd  567  Advertiser Z  3020  1/30/2002 20:42  22 0.0395 1 0.00    2/1/2002    17:46
-13af56cbce939b3c8a9f304ae8dfdcb22551684c9f0e81db31c433db1c1d41161afbfde71051f9bd  567  Advertiser Z  3323  1/30/2002 18:53  23 0.0295 1 0.00    2/1/2002    17:46
-
+﻿Member ID	Merchant ID	Merchant Name	Order ID	Transaction Date	Transaction Time	SKU Number	Sales($)	Quantity	Commissions($)	Process Date	Process Time	

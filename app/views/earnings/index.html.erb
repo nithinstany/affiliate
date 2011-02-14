@@ -1,9 +1,9 @@
-<h1> My Account </h1>
+<h1 class="heading myAccount"> My Account </h1>
+<div class="details">
+<h2 class="heading"> Balance </h2>
 
-<h2> Balance : </h2>
 
-
-<table>
+<table class="earnings">
   <tr><th> Total Earnings : </th> <td> <%= number_to_currency(current_user.earnings)%> </td> </tr>
   <tr><th> Total Withdrawals :</th> <td> <%= number_to_currency(current_user.withdrawals )%> </td> </tr>
   <tr><th> Requests being processed :</th> <td> <%= number_to_currency(calculate_pending_total) %> </td> </tr>
@@ -18,13 +18,25 @@
   <% if current_user.available_for_withdrawal > 0 %>
 
     <%= form_tag('#') do %>
-     <p> <lable> Amount I wish to withdraw*: </label> <%= text_field_tag('amount') %> </p>
-     <p> <lable> My Paypal id: </label><%= text_field_tag('paypal_payer_id', (current_user.paypal_info.paypal_id rescue ' ') )%> </p>
-     <%= submit_tag 'submit'  %>
-  * Transaction fees applicable : <%=  Setting.find_by_reference('transaction_fee').value %>% of withdrawal amount plus <%= number_to_currency(Setting.find_by_reference('fixed_fee').value) %>
+    <label> Amount I wish to withdraw*: </label> 
+     <%= text_field_tag('amount') %> 
+
+     <div class="clear"></div>
+
+    <label> My Paypal id: </label>
+     <%= text_field_tag('paypal_payer_id', (current_user.paypal_info.paypal_id rescue ' ') )%> 
+
+<div class="clear"></div>
+<hr />
+<center>
+     <%= submit_tag 'submit' ,:class => 'button' %>
+  <p>* Transaction fees applicable : <%=  Setting.find_by_reference('transaction_fee').value %>% of withdrawal amount plus <%= number_to_currency(Setting.find_by_reference('fixed_fee').value) %></p></center>
     <% end %>
   <%end%>
 <%else%>
-   <p> You have already requested to for a withdrawal. </p>
+<hr />
+  <center> <p> You have already requested to for a withdrawal. </p></center>
 <%end%>
+</div>
+
 

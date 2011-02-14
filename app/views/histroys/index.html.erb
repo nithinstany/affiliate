@@ -1,23 +1,10 @@
-<h1> Your Histroy Details </h1>
+<h1 class="heading userDetail">Your Transaction Details </h1>
 
-<h2> Processed Withdrawals: </h2> <!-- sidebar left -->
-<table>
-   <tr>
-     <th> Amount </th>
-     <th> Paid Date </th>
-   </tr>
-  <% current_user.payment_requests.completed_payments.each do |tr| %>
-    <tr>
-      <td> <%= number_to_currency(tr.total_amount) %> </td>
-      <td> <%= tr.updated_at.to_date %> </td>
-    </tr>
-  <%end%>
-</table>
-Total : <%= number_to_currency(calculate_paid_total) %>
+<div class="leftContent left">
 
-<h2> Payment requested </h2> <!--right -->
+<h2 class="heading"> Payment requested </h2> 
 <% unless current_user.payment_requests.pending_payments.blank? %>
-  <table>
+  <table class="withdrawals">
      <tr>
        <th> Amount </th>
        <th> Requested date </th>
@@ -30,11 +17,30 @@ Total : <%= number_to_currency(calculate_paid_total) %>
     <%end%>
   </table>
 <%else%>
-  <p> No pending requests. </p>
+  <p style="margin-left:20px; margin-bottom:20px;"> No pending requests. </p>
 <%end%>
+<br />
+<div class="clear"></div>
+<h2 class="heading"> Processed Withdrawals</h2>
+<table class="withdrawals">
+   <tr>
+     <th> Amount </th>
+     <th> Paid Date </th>
+   </tr>
+  <% current_user.payment_requests.completed_payments.each do |tr| %>
+    <tr>
+      <td> <%= number_to_currency(tr.total_amount) %> </td>
+      <td> <%= tr.updated_at.to_date %> </td>
+    </tr>
+  <%end%>
+</table>
+<div class="right total">Total : <%= number_to_currency(calculate_paid_total) %></div>
 
-<h2> Transaction: </h2>
-<table>
+
+</div>
+<div class="rightContent right">
+<h2 class="heading"> Transaction </h2>
+<table class="listing">
    <tr>
      <th> Order Id </th>
      <th> Transaction Date </th>
@@ -52,4 +58,5 @@ Total : <%= number_to_currency(calculate_paid_total) %>
     </tr>
   <%end%>
 </table>
+</div>
 

@@ -1,40 +1,55 @@
+<h1 class="heading editUser"> Edit User </h1>
+<br />
+<div class="details">
+  <%= form_for(@user) do |f| %>
+    <%= f.error_messages %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
+    <div class="clear"></div>
 
-<h1> Edit user </h1>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    
+    <div class="clear"></div>
 
+  <% if @user.paypal_info.blank? %>
+    <% @user.build_paypal_info %>
+      <%= f.fields_for :paypal_info do |d| %>
+         <label>pay_pal id : </label><%= d.text_field :paypal_id %>
+      <%end%>
+  <%else%>
+  <div class="clear"></div>
 
-<%= form_for(@user) do |f| %>
-  <%= f.error_messages %>
-  <p><%= f.label :name %></p>
-  <p><%= f.text_field :name %></p>
-
-
-  <p><%= f.label :address %></p>
-  <p><%= f.text_field :address %></p>
-
-<% if @user.paypal_info.blank? %>
-<% @user.build_paypal_info %>
-    <%= f.fields_for :paypal_info do |d| %>
-       pay_pal id : <%= d.text_field :paypal_id %>
-  <%end%>
-<%else%>
   <%= f.fields_for :paypal_info do |d| %>
-  pay_pal id : <%= d.text_field :paypal_id %>
+    <label>pay_pal id : </label><%= d.text_field :paypal_id %>
   <%end%>
+  <div class="clear"></div>
+ <%end%>
+
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+ <div class="clear"></div>
+
+ <% if @user.uid.blank? %>
+    <%= f.label :password %>
+   <%= f.password_field :password %>
+ 
+  <div class="clear"></div>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+
+  <div class="clear"></div>
+
 <%end%>
-
-
-  <p><%= f.label :email %></p>
-  <p><%= f.text_field :email %></p>
-<% if @user.uid.blank? %>
-  <p><%= f.label :password %></p>
-  <p><%= f.password_field :password %></p>
-
-  <p><%= f.label :password_confirmation %></p>
-  <p><%= f.password_field :password_confirmation %></p>
-<%end%>
-
-
-  <p><%= f.submit "Update" %></p>
+<hr />
+<center>
+  <%= f.submit "Update" ,:class => 'button' %>
+</center>
 <% end %>
+
+</div>
 

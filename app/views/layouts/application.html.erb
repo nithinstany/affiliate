@@ -11,20 +11,37 @@
   <%= yield :extra_javascripts %>
 </head>
 <body>
-<div class="header">
-  <div class="headerLeft left">
-   <%= link_to "<h1>LITTLE <span>SURPRIZES</span></h1>".html_safe, root_path %>
+  <div class="container">
+    <div class="header">
+      <div class="headertop">
+        <div class="logo left">
+          <%= link_to "<h1>LITTLE <span>SURPRIZES</span></h1>".html_safe, root_path %>
+        </div>
+        <div class="right links">
+           <ul>
+           <% unless current_user -%>
+              <li><%= link_to 'Sign-up', new_user_registration_path %> </li>
+              <li><%= link_to 'Login', new_user_session_path %> </li>
+              <li><%= link_to image_tag("/images/social-icons/facebook_32.png", :alt => "Sign in with Facebook"), omniauth_authorize_path('user', 'facebook') %>
+          <%else-%>
+              <li><%= link_to 'Logout', destroy_user_session_path %></li>
+          <%end-%>
+          </ul>
+       </div>
+    </div>
+    <div class="right">
+      <%= render :partial => 'shared/top_menu'%>
+    </div>
   </div>
-  <div class="headerRight right">
-    <%= render :partial => 'shared/top_menu'%>
+
+  <div class = 'clear'> </div>
+    <%if notice %> <div class="notice"><p><%= notice %> </p></div><%end-%>
+  <div class="wrapper">
+    <%= yield %>
   </div>
 </div>
-<div class = 'clear'> </div>
-<%if notice %> <p class="notice"><%= notice %> </p><%end-%>
-<div class="wrapper">
-<%= yield %>
-</div>
-<div class="clear"></div>
+
+<div class="footer">ggg</div>
 </body>
 </html>
 
