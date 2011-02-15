@@ -1,4 +1,4 @@
-<h1 class="heading editUser"> Edit User </h1>
+<h1 class="heading editUser"> Editing Profile </h1>
 <br />
 <div class="details">
   <%= form_for(@user) do |f| %>
@@ -16,12 +16,12 @@
   <% if @user.paypal_info.blank? %>
     <% @user.build_paypal_info %>
       <%= f.fields_for :paypal_info do |d| %>
-         <label>pay pal id  </label><%= d.text_field :paypal_id %>
+         <label>paypal id  </label><%= d.text_field :paypal_id %>
       <%end%>
   <%else%>
   
   <%= f.fields_for :paypal_info do |d| %>
-    <label>pay pal id  </label><%= d.text_field :paypal_id %>
+    <label>paypal id  </label><%= d.text_field :paypal_id %>
   <%end%>
  <%end%>
  <div class="clear"></div>
@@ -37,7 +37,7 @@
  
   <div class="clear"></div>
 
-  <%= f.label :password_confirmation %>
+  <%= f.label :confirm_password %>
   <%= f.password_field :password_confirmation %>
 
   <div class="clear"></div>
