@@ -294,12 +294,13 @@ h1.myAccount{background:url(/images/my_account.png) no-repeat left;}
 .total{color:#c43300;font-weight:bold;}
 
 table.earnings tr th{
-	width: 235px; 
+	width: 250px; 
 	margin-bottom: 25px;
 	padding-top:8px;
 	padding-left:0px;
 	color:#000;
 }
+table.earnings tr th span{font-size:11px;color:#c43300;}
 
 .details hr{border-top:1px solid #C4C2BF;border-bottom:1px solid #fff;margin:20px 0px;}
 .details{margin:0 auto;background-color:#f4f4f4;width:75%;padding:20px;}
@@ -325,6 +326,8 @@ table.earnings tr th{
 .details input:focus{background-image:none;border:1px solid #999;}
 
 .details legend{color:#b3201b;font-size:15px;}
+
+.button{text-align:center;}
 
 .details input.button{padding:5px 15px;background: url(/images/buttonBg.jpg) repeat-x;
 	border:1px solid #111;width:100px;color:#fff;}
