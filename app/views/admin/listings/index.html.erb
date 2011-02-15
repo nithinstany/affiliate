@@ -18,7 +18,8 @@
 
 <% @admin_listings.each do |admin_listing| %>
   <tr>
-    <td><%= raw(admin_listing.banner) %></td>
+     <td style="width:100px;"><div style="overflow:scroll; width:200px; height:50px">
+<%= raw(admin_listing.banner) %></td>
      <td><%= admin_listing.category.name %></td>
 
       <td><%= admin_listing.affiliate_merchant.name%></td>
