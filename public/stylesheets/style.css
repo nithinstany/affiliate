@@ -70,8 +70,8 @@ div.notice{
 
 div#login_container {
    width: 400px;
-   min-height: 350px;
-   margin:20px auto;
+   min-height: 325px;
+   margin:45px auto;
    border:1px solid #c4c4c4;
    color:#333;
    background-color:#fbfbfb;
@@ -90,11 +90,13 @@ div#login_header{
 	background: url(/images/sign_in.png) no-repeat left;
 }
 		
-div#login{padding:20px 0px 20px 40px;}		
+div#login{padding:20px 0px 20px 40px;}
+
+div#login label{color:#000;}		
 		
 div#login input{
 	padding:8px 10px;
-	margin-bottom:20px;
+	margin-bottom:22px;
 	border:1px solid #ddd;
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
@@ -108,7 +110,8 @@ div#login input.btn{
 	background: url(/images/buttonBg.jpg) repeat-x;
 	border:1px solid #111;
 	color:#fff;
-	width:100px;
+	width:80px;
+	padding:5px 6px;
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
 	margin-bottom:5px;

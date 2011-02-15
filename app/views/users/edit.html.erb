@@ -16,17 +16,15 @@
   <% if @user.paypal_info.blank? %>
     <% @user.build_paypal_info %>
       <%= f.fields_for :paypal_info do |d| %>
-         <label>pay_pal id : </label><%= d.text_field :paypal_id %>
+         <label>pay pal id  </label><%= d.text_field :paypal_id %>
       <%end%>
   <%else%>
-  <div class="clear"></div>
-
+  
   <%= f.fields_for :paypal_info do |d| %>
-    <label>pay_pal id : </label><%= d.text_field :paypal_id %>
+    <label>pay pal id  </label><%= d.text_field :paypal_id %>
   <%end%>
-  <div class="clear"></div>
  <%end%>
-
+ <div class="clear"></div>
 
   <%= f.label :email %>
   <%= f.text_field :email %>
