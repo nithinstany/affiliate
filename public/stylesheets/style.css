@@ -7,6 +7,7 @@ vertical-align : baseline;
 font-size:100%;
 font-style:normal;
 font-weight:normal;
+list-style:none;
 }
 
 :focus {
@@ -45,6 +46,9 @@ body{
 .left{float:left;}
 .right{float:right;}
 .clear{clear:both;}
+a{color:#000;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
 div.notice{
 	background-color:#E0F2C0;
 	padding:10px;
@@ -65,7 +69,7 @@ div.notice{
 }
 
 div#login_container {
-   width: 450px;
+   width: 400px;
    min-height: 350px;
    margin:20px auto;
    border:1px solid #c4c4c4;
@@ -80,38 +84,42 @@ div#login_header{
 	border-bottom:1px solid #c4c4c4;
 	height:50px;
 	line-height:50px;
-	padding-left:20px;
+	padding-left:45px;
 	color:#79a230;
 	font-size:20px;
-	background:#FFFFFF url(/images/login_bg.png) repeat-x bottom left;
+	background: url(/images/sign_in.png) no-repeat left;
 }
 		
-div#login{padding:20px;}		
+div#login{padding:20px 0px 20px 40px;}		
 		
 div#login input{
 	padding:8px 10px;
-	margin-bottom:15px;
+	margin-bottom:20px;
 	border:1px solid #ddd;
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
-	width:350px;
+	width:300px;
 	background:#fff url(/images/inputBg.jpg) repeat-x bottom;
 }
 
 div#login input:focus{border:1px solid #999;background-image:none;}
 
 div#login input.btn{
-	background-color:#222;
-	border:1px solid #ddd;
+	background: url(/images/buttonBg.jpg) repeat-x;
+	border:1px solid #111;
 	color:#fff;
 	width:100px;
-	background-image:none;
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
+	margin-bottom:5px;
 }
+
+div#login input.btn:focus{background-image:none;background-color:#222;}
 
 div#login a{text-decoration:none;color:#d98000;}
 div#login a:hover{text-decoration:underline;color:#000;}
+
+div#login input.large{width:260px;}
 
 input#user_remember_me[type=checkbox]{width:12px;border:1px solid #ddd;border:none;}
 
@@ -318,6 +326,12 @@ table.earnings tr th{
 
 .details legend{color:#b3201b;font-size:15px;}
 
-.details input.button{padding:5px 15px;margin:20px;background-image:none;background-color:#222;width:100px;color:#fff;}
+.details input.button{padding:5px 15px;background: url(/images/buttonBg.jpg) repeat-x;
+	border:1px solid #111;width:100px;color:#fff;}
+
+
+.details input.button:focus{background-image:none;background-color:#222;}
+
+.errorExplanation{color:red;font-size:15px;margin:10px;}
 
 .footer{width:100%;min-height:50px;background-color:#1f211d;border-top:1px solid #a5d84b;}

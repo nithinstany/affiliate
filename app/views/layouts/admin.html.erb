@@ -14,18 +14,17 @@
   <%= yield :extra_javascripts %>
 </head>
 <body>
- <div id="header"> <h1> Little surprizes</h1> </div>
- <div id='container'>
-   <div id="user_nav">
-     <%= render :partial => 'shared/links' %>
-   </div>
-<div class="heading">
-  <%= yield :heading %>
-
-  <%= yield :actions %>
-</div>
-  <%= yield %>
- </div>
+  <div id="header"> <h1> Little surprizes</h1> </div>
+  <div id='container'>
+     <div id="user_nav">
+       <%= render :partial => 'shared/links' %>
+     </div>
+     <div class="heading">
+        <%= yield :heading %>
+        <%= yield :actions %>
+     </div>
+     <%= yield %>
+  </div>
 </body>
 </html>
 

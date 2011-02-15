@@ -29,7 +29,7 @@
 <div class="clear"></div>
 <hr />
 <center>
-     <%= submit_tag 'submit' ,:class => 'button' %>
+     <%= submit_tag 'submit' ,:class => 'button' %> - or - <%= link_to "Back", root_path %>
   <p>* Transaction fees applicable : <%=  Setting.find_by_reference('transaction_fee').value %>% of withdrawal amount plus <%= number_to_currency(Setting.find_by_reference('fixed_fee').value) %></p></center>
     <% end %>
   <%end%>
