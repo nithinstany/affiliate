@@ -16,8 +16,15 @@ class EarningsController < ApplicationController
             value = line.split(' ')
             member = User.find_by_key(value[0])
             if member && value[10].to_f > 0.00
-              date = value[5].split('/').reverse!.join('-')
-              link_share.transactions.create!(:user_id => member.id, :process_date => date , :commissions => value[10], :orderid => value[4],:sales => value[8]  )
+
+              tranactiondate = value[5].split('/')  #transction date "month/day/year"
+              trans_date = tranactiondate[2] + '-' + tranactiondate[0] + '-'+ tranactiondate[1]
+
+              processdate = value[11].split('/') #process date "month/day/year"
+              proc_date = processdate[2] + '-' + processdate[0] + '-'+ processdate[1]
+
+              status =  (Time.parse(proc_date.to_s).strftime("%Y-%d-%m").to_date <= Date.today)? 'cash-back available' : 'cash-back pending'
+              link_share.transactions.create!(:user_id => member.id, :tranactiondate => trans_date , :commissions => value[10], :orderid => value[4],:sales => value[8] , :status => status  )
             end
           end
           i +=1

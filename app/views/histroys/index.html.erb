@@ -1,8 +1,8 @@
-<h1 class="heading userDetail">Your Transaction Details </h1>
+<h1 class="heading userDetail">My transactions </h1>
 
 <div class="leftContent left">
 
-<h2 class="heading"> Payment requested </h2> 
+<h2 class="heading"> Payment requested </h2>
 <% unless current_user.payment_requests.pending_payments.blank? %>
   <table class="withdrawals">
      <tr>
@@ -39,7 +39,7 @@
 
 </div>
 <div class="rightContent right">
-<h2 class="heading"> Transaction </h2>
+<h2 class="heading"> Order details </h2>
 <table class="listing">
    <tr>
      <th> Order Id </th>
@@ -60,3 +60,4 @@
 </table>
 </div>
 <div class="right"><%= link_to "Back", root_path %></div>
+
