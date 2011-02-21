@@ -3,13 +3,11 @@
       <script type="text/javascript">
         $(function()
           {
-             $("#listings > a").each(function ()
+             $(".rightContent > a").each(function ()
              {
                 var href = $(this).attr('href');
                 $(this).attr('href', href + "&u1=<%=current_user.key%>");
              });
-
-
           });
       </script>
     <%end%>
