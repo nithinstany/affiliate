@@ -9,7 +9,8 @@ class EarningsController < ApplicationController
         start_date = convert_date_to_string(link_share.end_date)
         end_date = convert_date_to_string(Date.today)
         system("rm #{Rails.root}/public/link-share-report.txt") if File.exists?("#{Rails.root}/public/link-share-report.txt")
-        system("wget -O #{Rails.root}/public/link-share-report.txt -S \"http://cli.linksynergy.com/cli/publisher/reports/downloadReport.php?bdate=#{start_date}&edate=#{end_date}&cuserid=shashank123&cpi=isiritech99&eid=vXQMo6zjz3Y\"")
+        #system("wget -O #{Rails.root}/public/link-share-report.txt -S \"http://cli.linksynergy.com/cli/publisher/reports/downloadReport.php?bdate=#{start_date}&edate=#{end_date}&cuserid=shashank123&cpi=isiritech99&eid=vXQMo6zjz3Y\"")
+        system("wget -O #{Rails.root}/public/link-share-report.txt -S \"http://cli.linksynergy.com/cli/publisher/reports/downloadReport.php?bdate=#{start_date}&edate=#{end_date}&cuserid=skedilaya&cpi=Colorado11&eid=9i9EOPOu2kU\"")
         i = 0
         File.new("#{Rails.root}/public/link-share-report.txt").each_line do |line|
           if i > 0
