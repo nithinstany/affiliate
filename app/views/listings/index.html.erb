@@ -2,8 +2,8 @@
 
 <div class="rightContent right">
 
-  <% unless @category.listings.featured.blank? %>
-    <% @category.listings.featured.each do |listing| %>
+  <% unless @category.listings.blank? %>
+    <% @category.listings.each do |listing| %>
        <%= raw(listing.banner) %> <br />
     <%end%>
   <%else%>
