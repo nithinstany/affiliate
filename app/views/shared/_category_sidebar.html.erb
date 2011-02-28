@@ -1,9 +1,8 @@
 <div class="leftContent left">
-<ul><% Category.all.each do |category| %>
-      <% unless category.listings.blank? %>
-         <li> <%= link_to category.name, category_listings_path(category) %> </li>
-      <% end %>
-<%end%>
-</ul>
+  <ul>
+    <% Category.all.each do |category| %>
+      <li> <%= link_to category.name, category_listings_path(category) %> </li>
+    <%end%>
+  </ul>
 </div>
 
