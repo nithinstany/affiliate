@@ -3,9 +3,7 @@
 <div class="rightContent right">
 
   <% unless @category.listings.blank? %>
-    <% @category.listings.each do |listing| %>
-       <%= raw(listing.banner) %> <br />
-    <%end%>
+    <%= render :partial => 'shared/listing', :locals => { :listings => @category.listings } %>
   <%else%>
      <p> Listings are not available for category </p>
   <%end%>

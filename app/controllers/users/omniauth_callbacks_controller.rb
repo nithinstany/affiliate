@@ -4,7 +4,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if !User.omniauth_providers.index(provider).nil?
       #omniauth = request.env["omniauth.auth"]
       omniauth = env["omniauth.auth"]
-
       user = User.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
 
       if user

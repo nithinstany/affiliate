@@ -1,12 +1,6 @@
-
 <%= render :partial => 'shared/category_sidebar' %>
 <div class="rightContent right">
-
-    <% Listing.featured.each do |listing| %>
-      <%= raw(listing.banner) %> <br />
-    <%end%>
-   
- <%= render :partial => 'shared/add_key_to_links' %>
-
+  <%= render :partial => 'shared/listing', :locals => { :listings => Listing.featured } %>
+  <%= render :partial => 'shared/add_key_to_links' %>
 </div>
 
