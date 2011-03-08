@@ -1,8 +1,0 @@
-<% listings.featured.in_groups_of(3) do |group| %>
-  <% group.each do |listing| %>
-    <% unless listing.blank? %>
-      <%= raw(listing.banner)  %> <br />
-    <%end%>
-  <%end%>
-<%end%>
-
