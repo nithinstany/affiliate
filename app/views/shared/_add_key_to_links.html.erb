@@ -11,5 +11,17 @@
           });
       </script>
     <%end%>
-  <%end%>
+ <%else%>
+   <% content_for :extra_javascripts do %>
+      <script type="text/javascript">
+        $(function()
+          {
+             $(".rightContent > a").click(function(event) {
+               window.location = "<%= new_user_session_path(:login => true) %>";
+               return false;
+             });
+          });
+      </script>
+    <%end%>
+ <%end%>
 

@@ -46,7 +46,6 @@
      <th> Transaction Date </th>
      <th> Sales </th>
      <th> Commissions</th>
-     <th> Affiliate Merchant name</th>
      <th> Status</th>
    </tr>
   <% current_user.transactions.each do |tr| %>
@@ -55,7 +54,6 @@
       <td> <%= tr.tranactiondate %></td>
       <td> <%= number_to_currency(tr.sales) %></td>
       <td> <%= number_to_currency(tr.commissions) %> </td>
-      <td> <%= tr.affiliate_merchant.name %> </td>
       <td> <%= tr.status %> </td>
     </tr>
   <%end%>

@@ -1,4 +1,7 @@
 <div id="login_container">
+  <% if params[:login] %>
+  <p> Please Sign up/Login to earn a cashback when you shop. </p>
+  <%end%>
 
 <div id="login_header">Sign In</div>
 <div id="login">
@@ -20,3 +23,4 @@
 <%= render :partial => "devise/shared/links" %>
 </div>
 </div>
+
