@@ -3,7 +3,7 @@
       <script type="text/javascript">
         $(function()
           {
-             $(".rightContent > a").each(function ()
+             $(".rightContent .left > a").each(function ()
              {
                 var href = $(this).attr('href');
                 $(this).attr('href', href + "&u1=<%=current_user.key%>");
@@ -16,7 +16,7 @@
       <script type="text/javascript">
         $(function()
           {
-             $(".rightContent > a").click(function(event) {
+             $(".rightContent .left > a").click(function(event) {
                window.location = "<%= new_user_session_path(:login => true) %>";
                return false;
              });
