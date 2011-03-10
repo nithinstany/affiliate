@@ -1,8 +1,8 @@
-<div id="login_container">
-  <% if params[:login] %>
-  <p> Please Sign up/Login to earn a cashback when you shop. </p>
-  <%end%>
 
+  <% if params[:login] %>
+  <div class="info"> Please Sign up/Login to earn a cashback when you shop. </div>
+  <%end%>
+<div id="login_container">
 <div id="login_header">Sign In</div>
 <div id="login">
   <%= form_for(resource_name, resource, :url => session_path(resource_name)) do |f| %>

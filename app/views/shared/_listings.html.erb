@@ -1,9 +1,9 @@
 <% listings.featured.in_groups_of(3) do |group| %>
   <% group.each do |listing| %>
     <% unless listing.blank? %>
-      <div class='left'>
+      <div class='bannerBox left'>
         <%= raw(listing.banner) %>  <br />
-        <%= listing.notes %>
+        <p><%= listing.notes %></p>
       </div>
     <%end%>
   <%end%>

@@ -58,6 +58,15 @@ div.notice{
 	color:#464f53;
 }
 
+div.info{
+	background-color:#FFFAC0;
+	padding:10px;
+	margin:10px;
+	border:1px solid #866730;
+	font-size:14px;
+	color:#222;
+}
+
 .container{
 	background:#fff url(/images/containerBg.jpg) repeat-x;
 	width:950px;
@@ -205,6 +214,19 @@ ul#social-icons li{list-style:none;}
     padding:0px 0px;
 }
 
+.bannerBox{
+	width:200px;
+    height:170px;
+	border:1px solid #ddd;
+	margin:10px;
+	background-color:#fff;
+	padding:5px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+
+.bannerBox img{width:200px;height:150px;}
+.bannerBox p{color:#EB8A00}
 
 table.listing{width:99.7%;border-top:1px solid #DDDDDD;border-right:1px solid #DDDDDD;}
 
