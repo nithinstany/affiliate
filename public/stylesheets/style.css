@@ -221,8 +221,8 @@ ul#social-icons li{list-style:none;}
 
 .bannerBox{
 	width:200px;
-    height:170px;
-	margin:10px 4px 10px 5px;
+    height:180px;
+	margin:9px 4px 0px 5px;
 	background:url(/images/bannerBoxBg.png) no-repeat;
 	padding:10px;
 	-moz-border-radius:4px;
