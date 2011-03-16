@@ -2,7 +2,7 @@
   <% group.each do |listing| %>
     <% unless listing.blank? %>
       <div class='bannerBox left'>
-        <%= raw(listing.banner) %>  <br />
+        <div class="banner"><%= raw(listing.banner) %></div>
         <p><%= listing.notes %></p>
       </div>
     <%end%>

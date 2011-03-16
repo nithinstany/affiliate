@@ -144,9 +144,6 @@ ul#social-icons li{list-style:none;}
 
 .logo{width:400px;}
 
-.logo h1{color:#fff;font-size:210%;padding:20px 0px 0px 20px;}
-
-
 .links{width:35%;padding-top:10px;}
 
 .links ul li{list-style:none;display:inline;float:right;}
@@ -158,14 +155,14 @@ ul#social-icons li{list-style:none;}
 	margin-left: 0;
 	list-style-type: none;
 	text-align: left;
-	margin-top:8px;
+	margin-top:8px;width:530px;
 }
 
 .tabs li{display: inline;margin: 0;}
 
 .tabs li a{
 	text-decoration: none;
-	padding: 8px 15px;
+	padding: 8px 10px;
 	margin-right: 3px;
 	font-weight:bold;
 	border-bottom: none;
@@ -181,7 +178,7 @@ ul#social-icons li{list-style:none;}
 
 .leftContent{
      min-height:500px;
-     width:22%;
+     width:200px;
      border-right:1px solid #eee;
      padding-right:10px;
 }
@@ -204,7 +201,7 @@ ul#social-icons li{list-style:none;}
      color:black;
      text-decoration:none;
      padding:0px 12px;
-     font-size:15px;
+     font-size:13px;
      background:url('/images/bullet.jpg') no-repeat;
 }
 
@@ -212,23 +209,22 @@ ul#social-icons li{list-style:none;}
 
 .rightContent {
     min-height:165px;
-    width:75%;
+    width:700px;
     padding:0px 0px;
 }
 
 .bannerBox{
 	width:200px;
-    height:170px;
-	border:1px solid #ddd;
-	margin:10px;
-	background-color:#fff;
-	padding:5px;
+    height:120px;
+	margin:10px 4px 10px 5px;
+	background:url(/images/bannerBoxBg.png) no-repeat;
+	padding:10px;
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
+	text-align:center;
 }
-
-.bannerBox img{width:200px;height:150px;}
-.bannerBox p{color:#EB8A00}
+.banner{height:100px;}
+.bannerBox p{color:#EB8A00;font-size:12px;margin-top:5px;}
 
 table.listing{width:99.7%;border-top:1px solid #DDDDDD;border-right:1px solid #DDDDDD;}
 
