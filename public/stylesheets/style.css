@@ -142,7 +142,7 @@ ul#social-icons li{list-style:none;}
 
 .headertop{width:100%;height:59px;}
 
-.logo{width:62%;}
+.logo{width:50%;}
 
 .logo h1{color:#fff;font-size:210%;padding:20px 0px 0px 20px;}
 
@@ -158,6 +158,7 @@ ul#social-icons li{list-style:none;}
 	margin-left: 0;
 	list-style-type: none;
 	text-align: left;
+	margin-top:8px;
 }
 
 .tabs li{display: inline;margin: 0;}
