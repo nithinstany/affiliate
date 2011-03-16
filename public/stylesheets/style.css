@@ -138,7 +138,7 @@ input#user_remember_me[type=checkbox]{width:12px;border:1px solid #ddd;border:no
 ul#social-icons li{list-style:none;}
 
 
-.header{min-height:80px;padding:10px 10px;}
+.header{min-height:100px;padding:2px;}
 
 .headertop{width:100%;height:59px;}
 
@@ -147,11 +147,12 @@ ul#social-icons li{list-style:none;}
 .logo h1{color:#fff;font-size:210%;padding:20px 0px 0px 20px;}
 
 
-.links{width:35%;} 
+.links{width:35%;padding-top:10px;} 
 
 .links ul li{list-style:none;display:inline;float:right;}
 .links ul li a{text-decoration:none;color:#fff;margin-right:20px;}
 .links ul li a:hover{text-decoration:underline;}
+
 .tabs{
 	padding: 7px 0;
 	margin-left: 0;
