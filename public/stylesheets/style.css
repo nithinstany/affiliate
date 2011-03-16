@@ -221,7 +221,7 @@ ul#social-icons li{list-style:none;}
 
 .bannerBox{
 	width:200px;
-    height:120px;
+    height:170px;
 	margin:10px 4px 10px 5px;
 	background:url(/images/bannerBoxBg.png) no-repeat;
 	padding:10px;
@@ -229,7 +229,7 @@ ul#social-icons li{list-style:none;}
 	-webkit-border-radius:4px;
 	text-align:center;
 }
-.banner{height:100px;}
+.banner{height:150px;}
 .bannerBox p{color:#EB8A00;font-size:12px;margin-top:5px;}
 
 table.listing{width:99.7%;border-top:1px solid #DDDDDD;border-right:1px solid #DDDDDD;}
