@@ -74,7 +74,7 @@ div.info{
 	-moz-border-radius-topright:5px;
 	-webkit-border-top-right-radius:5px;
 	-moz-border-radius-topleft:5px;
-	-webkit-border-top-left-radius:5px; 
+	-webkit-border-top-left-radius:5px;
 }
 
 div#login_container {
@@ -98,11 +98,11 @@ div#login_header{
 	font-size:20px;
 	background: url(/images/sign_in.png) no-repeat left;
 }
-		
+
 div#login{padding:20px 0px 20px 40px;}
 
-div#login label{color:#000;}		
-		
+div#login label{color:#000;}
+
 div#login input{
 	padding:8px 10px;
 	margin-bottom:22px;
@@ -142,12 +142,12 @@ ul#social-icons li{list-style:none;}
 
 .headertop{width:100%;height:59px;}
 
-.logo{width:50%;}
+.logo{width:400px;}
 
 .logo h1{color:#fff;font-size:210%;padding:20px 0px 0px 20px;}
 
 
-.links{width:35%;padding-top:10px;} 
+.links{width:35%;padding-top:10px;}
 
 .links ul li{list-style:none;display:inline;float:right;}
 .links ul li a{text-decoration:none;color:#fff;margin-right:20px;}
@@ -236,7 +236,7 @@ table.listing{width:99.7%;border-top:1px solid #DDDDDD;border-right:1px solid #D
 table.listing tr th{
 	background:#FFFFFF url(/images/tableHeader.jpg) bottom left repeat-x;
 	padding:5px 15px;
-	color:#000;	
+	color:#000;
 }
 
 table.listing td,table th{
@@ -321,7 +321,7 @@ h1.myAccount{background:url(/images/my_account.png) no-repeat left;}
 .total{color:#c43300;font-weight:bold;}
 
 table.earnings tr th{
-	width: 250px; 
+	width: 250px;
 	margin-bottom: 25px;
 	padding-top:8px;
 	padding-left:0px;
@@ -339,7 +339,7 @@ table.earnings tr th span{font-size:11px;color:#c43300;}
     margin-bottom: 25px;
 	padding-top:8px;
 }
- 
+
 .details label{text-align: left;padding-right: 15px;color:#000;}
 .details input,select{
 	padding:8px 3px;
@@ -365,3 +365,4 @@ table.earnings tr th span{font-size:11px;color:#c43300;}
 .errorExplanation{color:red;font-size:15px;margin:10px;}
 
 .footer{width:100%;min-height:50px;background-color:#1f211d;border-top:1px solid #a5d84b;}
+
