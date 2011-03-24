@@ -79,7 +79,9 @@ div.info{
 
 div#login_container {
    width: 400px;
-   min-height: 325px;
+   min-height:325px;
+   height:auto !important;
+   height:325px;
    margin:45px auto;
    border:1px solid #c4c4c4;
    color:#333;
@@ -138,7 +140,7 @@ input#user_remember_me[type=checkbox]{width:12px;border:1px solid #ddd;border:no
 ul#social-icons li{list-style:none;}
 
 
-.header{min-height:100px;padding:2px;}
+.header{height:100px;padding:2px;}
 
 .headertop{width:100%;height:59px;}
 
@@ -178,9 +180,12 @@ ul#social-icons li{list-style:none;}
 
 .leftContent{
      min-height:500px;
+     height:auto !important;
+     height:500px;
      width:200px;
      border-right:1px solid #eee;
      padding-right:10px;
+	 padding-bottom:10px;
 }
 
 .leftContent ul{
@@ -208,22 +213,24 @@ ul#social-icons li{list-style:none;}
 .leftContent ul li a:hover{text-decoration:underline;}
 
 .rightContent {
-    min-height:165px;
+    min-height:500px;
+    height:auto !important;
+    height:500px;
     width:700px;
     padding:0px 0px;
 }
 
 .bannerBox{
 	width:200px;
-    height:120px;
-	margin:10px 4px 10px 5px;
+    height:180px;
+	margin:9px 4px 0px 5px;
 	background:url(/images/bannerBoxBg.png) no-repeat;
 	padding:10px;
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
 	text-align:center;
 }
-.banner{height:100px;}
+.banner{height:150px;}
 .bannerBox p{color:#EB8A00;font-size:12px;margin-top:5px;}
 
 table.listing{width:99.7%;border-top:1px solid #DDDDDD;border-right:1px solid #DDDDDD;}
@@ -360,5 +367,5 @@ table.earnings tr th span{font-size:11px;color:#c43300;}
 
 .errorExplanation{color:red;font-size:15px;margin:10px;}
 
-.footer{width:100%;min-height:50px;background-color:#1f211d;border-top:1px solid #a5d84b;}
+.footer{width:100%;height:50px;background-color:#1f211d;border-top:1px solid #a5d84b;}
 
