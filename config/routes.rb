@@ -9,6 +9,9 @@ Affiliate::Application.routes.draw do
     resources :listings
   end
 
+  match 'about' => 'home#about'
+  match 'faq' => 'home#faq'
+
   root :to => "home#index"
  # devise_for :users, :path_names => { :sign_up => "register" }
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
