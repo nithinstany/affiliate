@@ -11,6 +11,7 @@
   <%= yield :extra_javascripts %>
 </head>
 <body>
+ <div class="clear"></div>
   <div class="container">
     <div class="header">
       <div class="headertop">
@@ -18,14 +19,17 @@
           <%= link_to '<img src="/images/logo.jpg" height="96px"/>'.html_safe, root_path %>
         </div>
         <div class="right links">
-           <ul>
+          <ul>
+            <li><%= link_to "About", about_path %></li>
+		    <li><%= link_to "FAQ", faq_path %></li>
+            
            <% unless current_user -%>
-              <li><%= link_to 'Sign-up', new_user_registration_path %> </li>
-              <li><%= link_to 'Login', new_user_session_path %> </li>
-             <!-- <li><%= link_to image_tag("/images/social-icons/facebook_connect.gif", :alt => "Sign in with Facebook"), omniauth_authorize_path('user', 'facebook') %> -->
-          <%else-%>
-              <li><%= link_to 'Logout', destroy_user_session_path %></li>
-          <%end-%>
+      <li><%= link_to 'Sign-up', new_user_registration_path %> </li>
+      <li><%= link_to 'Login', new_user_session_path %> </li>
+      <!-- <li><%= link_to image_tag("/images/social-icons/facebook_connect.gif", :alt => "Sign in with Facebook"), omniauth_authorize_path('user', 'facebook') %> -->
+    <%else-%>
+      <li><%= link_to 'Logout', destroy_user_session_path %></li>
+    <%end-%>
           </ul>
        </div>
     </div>

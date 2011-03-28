@@ -146,11 +146,21 @@ ul#social-icons li{list-style:none;}
 
 .logo{width:400px;}
 
-.links{width:35%;padding-top:10px;}
+.links{width:35%;padding-top:20px;text-align:right;}
 
-.links ul li{list-style:none;display:inline;float:right;}
-.links ul li a{text-decoration:none;color:#fff;margin-right:20px;}
-.links ul li a:hover{text-decoration:underline;}
+.links ul li{list-style:none;display:inline;}
+.links ul li a{
+	text-decoration:none;
+	color:#fff;
+	margin-right:10px;
+	background:#36481D;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px;
+	padding:3px 8px;
+	border:1px solid #3e5320;
+	text-decoration:none;
+}
+.links ul li a:hover{text-decoration:none;background:#222;}
 
 .tabs{
 	padding: 7px 0;
@@ -176,7 +186,12 @@ ul#social-icons li{list-style:none;}
 	-webkit-border-top-left-radius:5px;
 }
 
-.wrapper{padding:10px;min-height:600px;}
+.wrapper{
+	padding:10px;
+	min-height:420px;
+    height:auto !important;
+    height:420px;
+}
 
 .leftContent{
      min-height:500px;
@@ -319,7 +334,7 @@ h1.heading{
 h1.userDetail{background:url(/images/history_detail.png) no-repeat left;}
 h1.editUser{background:url(/images/user_edit.png) no-repeat left;}
 h1.myAccount{background:url(/images/my_account.png) no-repeat left;}
-
+h1.faq{background:url(/images/faq.png) no-repeat left;}
 
 .total{color:#c43300;font-weight:bold;}
 
@@ -364,6 +379,59 @@ table.earnings tr th span{font-size:11px;color:#c43300;}
 
 
 .details input.button:focus{background-image:none;background-color:#222;}
+
+
+
+.left_container{
+	min-height:80px;
+    height:auto !important;
+    height:80px;
+	padding:5px;
+	width:610px;
+}
+.left_container h2{
+	color:#79a230;
+	line-height:28px;
+	margin-bottom:10px;
+	font-weight:bold;
+	font-size:16px;
+	border-bottom:1px dotted #79a230;
+}
+
+.left_container h3{font-size:16px;color:#80AB35;line-height:28px;font-weight:bold;}
+.left_container p{color:#111;line-height:22px;margin-bottom:20px;}
+
+.box{
+	min-height:300px;
+	padding:15px;
+	background:#F6F6F6;
+	boxrder:1px solid #ddd;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px;
+	width:260px;
+	margin-left:15px;
+}
+
+.box h2{
+	color:#DF8D15;
+	font-weight:bold;
+	font-size:16px;
+	border-bottom:dotted 1px #ddd;
+	background:url(/images/orange_arrow_icon.gif) no-repeat left;
+	padding-left:20px;
+	line-height:28px;
+}
+
+.box h3{color:#a7d24c;font-weight:bold;font-size:14px;}
+.box div.reviewBox {margin:10px 0px;}
+.box div.reviewBox p{color:#000;line-height:22px;font-style:italic;}
+.box div.reviewBox p.name{color:#739b1c;margin-bottom:20px;font-style:normal;}
+
+
+.faqBox h3{color:#80AB35;font-weight:bold;font-size:14px;line-height:22px;}
+.faqBox {margin:15px 0px;}
+.faqBox p{color:#111;line-height:20px;font-size:12px;}
+
 
 .errorExplanation{color:red;font-size:15px;margin:10px;}
 
