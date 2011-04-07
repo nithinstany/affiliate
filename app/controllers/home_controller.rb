@@ -9,6 +9,9 @@ class HomeController < ApplicationController
 
   def about
   end
+  
+  def special_instructions
+  end
 
 end
 
