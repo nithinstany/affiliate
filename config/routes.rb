@@ -18,7 +18,9 @@ Affiliate::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
 
   end
-  resources :users
+  resources :users do
+   get 'check_login', :on => :collection
+  end
   namespace :admin do
     root :to => 'categories#index'
     resources :listings
