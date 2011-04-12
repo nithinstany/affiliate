@@ -45,6 +45,7 @@ body{
 
 .left{float:left;}
 .right{float:right;}
+.center{float:center;}
 .clear{clear:both;}
 a{color:#000;text-decoration:none;}
 a:hover{text-decoration:underline;}
@@ -468,4 +469,29 @@ table.earnings tr th span{font-size:11px;color:#c43300;}
 .errorExplanation{color:red;font-size:15px;margin:10px;}
 
 .footer{width:100%;height:50px;background-color:#1f211d;border-top:1px solid #a5d84b;}
+
+.left_detail{
+   font-size:12px;
+   margin-bottom:15px;
+   margin-top:5px;
+   line-height:22px;
+    width:400px;
+}
+
+.left_box{
+   border-right:1px solid #ccc;
+   width:430px;
+   height:220px;
+   float:left;
+}
+
+.right_box{
+   float:right;
+   width:450px;
+   padding-right:5px;
+   
+   
+}
+
+
 
