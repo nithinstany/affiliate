@@ -19,7 +19,7 @@ Affiliate::Application.routes.draw do
 
   end
   resources :users do
-   get 'check_login', :on => :collection
+   
   end
   namespace :admin do
     root :to => 'categories#index'
