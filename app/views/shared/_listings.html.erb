@@ -3,9 +3,9 @@
     <% unless listing.blank? %>
       <div class='bannerBox left'>
         <div class="banner"><%if listing.category.name == "Amazon" %>
-                        <%=link_to image_tag('/images/amazon.gif'),category_listing_path(listing.category_id,listing.id) ,:rel => 'facebox'%>
+                        <%=link_to image_tag('/images/amazon.gif'),category_listing_path(listing.category_id,listing.id) %>
                             <%else%>
-                              <%=listing.banner %>
+                              <%=raw(listing.banner)%>
                             <%end%></div>
          <%=listing.notes %>
       </div>

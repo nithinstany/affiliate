@@ -6,8 +6,12 @@ class ListingsController < ApplicationController
   end
 #This is used to display the instructions for amazon
   def show
+    unless current_user.blank?
     @listing = Listing.find(params[:id])
-    render :layout=>false
+    
+  else
+     redirect_to new_user_session_path
+   end
   end
 
 end
