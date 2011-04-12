@@ -2,11 +2,19 @@
   <% group.each do |listing| %>
     <% unless listing.blank? %>
       <div class='bannerBox left'>
-        <div class="banner"><%= raw(listing.banner) %></div>
-        <p><%= listing.notes %></p>
+        <div class="banner"><%if listing.category.name == "Amazon" %>
+                        <%=link_to image_tag('/images/amazon.gif'),category_listing_path(listing.category_id,listing.id) ,:rel => 'facebox'%>
+                            <%else%>
+                              <%=listing.banner %>
+                            <%end%></div>
+         <%=listing.notes %>
       </div>
     <%end%>
   <%end%>
   <div class='clear'> </div>
 <%end%>
-
+<script type ='text/javascript'>
+  jQuery(document).ready(function($) {
+    $('a[rel*=facebox]').facebox()
+  })
+</script>

@@ -45,7 +45,6 @@ body{
 
 .left{float:left;}
 .right{float:right;}
-.center{float:center;}
 .clear{clear:both;}
 a{color:#000;text-decoration:none;}
 a:hover{text-decoration:underline;}
@@ -459,7 +458,7 @@ table.earnings tr th span{font-size:11px;color:#c43300;}
 }
 .detail{
 	width:860px;
-    font-size:12px;
+       font-size:12px;
 	margin-bottom:15px;
 	margin-top:5px;
 	line-height:22px;
@@ -494,4 +493,4 @@ table.earnings tr th span{font-size:11px;color:#c43300;}
 }
 
 
-
+   

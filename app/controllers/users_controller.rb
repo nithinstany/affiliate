@@ -55,7 +55,13 @@ class UsersController < ApplicationController
     end
   end
 
-
+def check_login
+  unless current_user.blank?
+     redirect_to admin_listings_path
+  else
+    redirect_to new_user_session_path
+   end
+ end
 
 
 end
