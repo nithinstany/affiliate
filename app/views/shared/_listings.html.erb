@@ -2,7 +2,7 @@
   <% group.each do |listing| %>
     <% unless listing.blank? %>
       <div class='bannerBox left'>
-        <div class="banner"><%if listing.category.name == "Amazon" %>
+        <div class="banner"><%if listing.affiliate_merchant.name == "Amazon" %>
                               <%=link_to image_tag('/images/amazon.gif'),category_listing_path(listing.category_id,listing.id) %>
                             <%else%>
                               <%=raw(listing.banner)%>
