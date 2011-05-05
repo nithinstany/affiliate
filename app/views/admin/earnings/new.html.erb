@@ -1,0 +1,30 @@
+<%= form_for(@transaction, :url => admin_user_earnings_path(@user, @transaction)) do |f| %>
+  <% if @transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this admin_listing from being saved:</h2>
+      <ul>
+        <% @transaction.errors.full_messages.each do |msg| %>
+          <li> <%= msg %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id, :value => @user.id %>
+  <%= f.label :sales %><br />
+  <%= f.text_field :sales %><br />
+  <%= f.label :commissions %><br />
+  <%= f.text_field :commissions %><br />
+  <%= f.label :affiliate_merchant_id %><br />
+  <%= f.select :affiliate_merchant_id, AffiliateMerchant.all.collect{|u| [u.name, u.id] } %><br />
+  <%= f.label :orderid, 'Order id' %><br />
+  <%= f.text_field :orderid %><br />
+  <%= f.label :tranactiondate, 'Tranaction date' %><em> ex: yyyy-mm-dd</em><br />
+  <%= f.text_field :tranactiondate %><br />
+  <%= f.label :status, 'Status' %><br />
+  <%= f.select :status, options_for_select([ ['Cash-back available','cash-back available'],['Cash-back pending','cash-back pending'] ]) %><br />
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

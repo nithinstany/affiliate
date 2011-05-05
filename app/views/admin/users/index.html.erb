@@ -9,6 +9,7 @@
     <th> facebook user </th>
     <th> Earnings </th>
     <th> Payment request </th>
+    <th> Add Earning </th>
   </tr>
 
 <% @users.each do |user| %>
@@ -18,6 +19,7 @@
      <td> <%= user.provider == 'facebook'? 'yes' : 'no' %> </td>
      <td> <%= link_to 'Earnings', [:admin, user] unless user.transactions.blank? %> </td>
      <td> <%= link_to 'payment request', payment_requests_admin_user_path(user) unless user.payment_requests.blank? %> </td>
+     <td> <%= link_to 'Add Earning', new_admin_user_earning_path(user) %> </td>
   </tr>
 <% end %>
 </table>

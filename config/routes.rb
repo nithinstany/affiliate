@@ -12,14 +12,14 @@ Affiliate::Application.routes.draw do
   match 'about' => 'home#about'
   match 'faq' => 'home#faq'
   match 'special_instructions' => 'home#special_instructions'
-  
+
   root :to => "home#index"
  # devise_for :users, :path_names => { :sign_up => "register" }
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
 
   end
   resources :users do
-   
+
   end
   namespace :admin do
     root :to => 'categories#index'
@@ -29,6 +29,7 @@ Affiliate::Application.routes.draw do
     resources :settings
     resources :users do
       get 'payment_requests', :on => :member
+      resources :earnings
     end
     resources :earnings
     resources :pages
