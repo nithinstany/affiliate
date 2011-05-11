@@ -14,6 +14,7 @@ class Transaction < ActiveRecord::Base
         #system("wget -O #{Rails.root}/public/link-share-report.txt -S \"http://cli.linksynergy.com/cli/publisher/reports/downloadReport.php?bdate=#{start_date}&edate=#{end_date}&cuserid=shashank123&cpi=isiritech99&eid=vXQMo6zjz3Y\"")
         system("wget -O #{Rails.root}/public/link-share-report.txt -S \"http://cli.linksynergy.com/cli/publisher/reports/downloadReport.php?bdate=#{start_date}&edate=#{end_date}&cuserid=skedilaya&cpi=Colorado11&eid=9i9EOPOu2kU\"")
         i = 0
+        transactions = []
         File.new("#{Rails.root}/public/link-share-report.txt").each_line do |line|
           if i > 0
             value = line.split(' ')
@@ -30,13 +31,15 @@ class Transaction < ActiveRecord::Base
               proc_date = processdate[2] + '-' + processdate[0] + '-'+ processdate[1]
 
               status =  (proc_date.to_date <= Date.today)? 'cash-back available' : 'cash-back pending'
-              link_share.transactions.create!(:user_id => member.id, :tranactiondate => trans_date , :commissions => reverse_value[2].reverse, :orderid => reverse_value[8].reverse,:sales => reverse_value[4].reverse , :status => status  )
+              transactions << link_share.transactions.create!(:user_id => member.id, :tranactiondate => trans_date , :commissions => reverse_value[2].reverse, :orderid => reverse_value[8].reverse,:sales => reverse_value[4].reverse , :status => status  )
               member.update_earnings
             end
           end
           i +=1
         end
         link_share.update_attribute('end_date', Date.today)
+
+        Transaction.send_email(transactions) unless transactions.blank?
       end
     end
 
@@ -44,6 +47,10 @@ class Transaction < ActiveRecord::Base
 
   def self.convert_date_to_string(date)
     date.blank?? Date.today.to_s.split('-').join : date.to_s.split('-').join
+  end
+
+  def self.send_email(transactions)
+    Notifier.send_transaction_delails(transactions).deliver
   end
 
 end

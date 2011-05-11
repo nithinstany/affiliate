@@ -1,0 +1,27 @@
+Hi,
+ <p> Transaction Detail on <%= Date.today.to_s %></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Affiliate Merchant name</th>
+    <th>Order id </th>
+    <th>Sales </th>
+    <th>commissions</th>
+    <th>transaction date</th>
+    <th>Status </th>
+  </tr>
+
+<% @transactions.each do |tran| %>
+  <tr>
+    <td><%= tran.user.name_or_email %></td>
+    <td><%= tran.affiliate_merchant.name %> </td>
+    <td><%= tran.orderid %> </td>
+    <td><%= number_to_currency(tran.sales) %> </td>
+    <td><%= number_to_currency(tran.commissions) %></td>
+    <td><%= tran.tranactiondate %></td>
+    <td><%= tran.status %></td>
+  </tr>
+<% end %>
+</table>
+
