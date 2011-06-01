@@ -1,10 +1,9 @@
 ActionMailer::Base.smtp_settings = {
-  :address => "smtp.gmail.com",
-  :port => 587,
-  :domain => "littlesurprizes.com",
-  :user_name => "lil.surprizes",
-  :password => "surprize123",
-  :authentication => "plain",
-  :enable_starttls_auto => true
+:address => "smtpout.secureserver.net",
+:port      => 80,
+:domain => "littlesurprizes.com",
+:user_name => "admin@littlesurprizes.com",
+:password => "Yosemite",
+:authentication => "plain"
 }
 
