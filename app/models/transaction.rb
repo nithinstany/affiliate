@@ -39,7 +39,7 @@ class Transaction < ActiveRecord::Base
         end
         link_share.update_attribute('end_date', Date.today)
 
-        Transaction.send_email(transactions) unless transactions.blank?
+        Transaction.send_email(transactions)
       end
     end
 
@@ -49,7 +49,7 @@ class Transaction < ActiveRecord::Base
     date.blank?? Date.today.to_s.split('-').join : date.to_s.split('-').join
   end
 
-  def self.send_email(transactions)
+  def self.send_email(transactions=[])
     Notifier.send_transaction_delails(transactions).deliver
   end
 

@@ -3,7 +3,7 @@ class Notifier < ActionMailer::Base
 
   def send_transaction_delails(transactions)
     @transactions = transactions
-    mail(:to => 'admin@littlesurprizes.com', :subject => "Transaction Details - #{Date.today.to_s}")
+    mail(:to => 'admin@littlesurprizes.com', :subject => "Transaction Details - #{Date.today.strftime('%d %B %Y')}")
   end
 
 
