@@ -2,7 +2,7 @@
 #
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
-
+set :output, {:error => "/home/rails/affiliate/log/text.txt", :standard => "/home/rails/affiliate/log/text1.txt" }
 # Example:
 #
 # set :output, "/path/to/my/cron_log.log"
