@@ -13,7 +13,7 @@
 #   rake "some:great:rake:task"
 # end
 #
-every 1.day do
+every 1.day, :at => '11.58 pm' do
   runner "Transaction.pull_report_from_linkshare"
 end
 
