@@ -1,10 +1,12 @@
-<% listings.featured.in_groups_of(3) do |group| %>
+<% listings.in_groups_of(3) do |group| %>
   <% group.each do |listing| %>
     <% unless listing.blank? %>
       <div class='bannerBox left'>
-        <div class="banner"><%if listing.affiliate_merchant.name == "Amazon" %>
+      <div class="banner">
+      <a href="http://www.facebook.com/sharer.php?u=YOUR-PAGE-URL&amp;t=Content-Title-or-SiteName">SHARE THIS</a>
+      <%if listing.affiliate_merchant.name == "Amazon" %>
                               <%=link_to image_tag('/images/amazon.gif'),category_listing_path(listing.category_id,listing.id) %>
-                            <%else%>
+            <%else%>
                               <%=raw(listing.banner)%>
                             <%end%></div>
          <%=listing.notes %>

@@ -16,11 +16,11 @@ class Transaction < ActiveRecord::Base
         i = 0
         transactions = []
         File.new("#{Rails.root}/public/link-share-report.txt").each_line do |line|
-          if i > 0
+          if i > 0 # skip the header line
             value = line.split(' ')
             member = User.find_by_key(value[0])
             if member && value[10].to_f > 0.00
-              # becuase split error by space we will doing from reverse order
+
               reverse = line.reverse
               reverse_value = reverse.split(' ')
 

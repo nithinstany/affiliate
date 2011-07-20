@@ -1,6 +1,6 @@
 <%= render :partial => 'shared/category_sidebar' %>
 <div class="rightContent right">
-  <%= render :partial => 'shared/listings', :locals => { :listings => Listing.featured } %>
+  <%= render :partial => 'shared/listings', :locals => { :listings => Listing.where(:featured => true) } %>
   <%= render :partial => 'shared/add_key_to_links' %>
 </div>
 <div class="clear"></div>

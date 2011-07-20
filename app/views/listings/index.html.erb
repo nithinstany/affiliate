@@ -1,8 +1,8 @@
 <%= render :partial => 'shared/category_sidebar' %>
 
 <div class="rightContent right">
-  <% unless @category.listings.blank? %>
-    <%= render :partial => 'shared/listings', :locals => { :listings => @category.listings } %>
+  <% unless @listings.blank? %>
+    <%= render :partial => 'shared/listings', :locals => { :listings =>  @listings } %>
   <%else%>
      <p> Listings are not available for category </p>
   <%end%>

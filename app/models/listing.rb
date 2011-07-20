@@ -6,6 +6,6 @@ class Listing < ActiveRecord::Base
   validates_presence_of :banner
 
 
-  scope :featured, :conditions => { :featured => true }
+
 end
 
