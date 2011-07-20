@@ -237,7 +237,7 @@ ul#social-icons li{list-style:none;}
 
 .bannerBox{
 	width:200px;
-    height:180px;
+        height:180px;
 	margin:9px 4px 0px 5px;
 	background:url(/images/bannerBoxBg.png) no-repeat;
 	padding:10px;
@@ -245,8 +245,13 @@ ul#social-icons li{list-style:none;}
 	-webkit-border-radius:4px;
 	text-align:center;
 }
-.banner{height:150px;}
-.bannerBox p{color:#EB8A00;font-size:12px;margin-top:5px;}
+.banner{height:145px;}
+.bannerBox p{color:#EB8A00;font-size:12px;}
+.bannerBox div.title{height:18px;}
+
+.share a{font-size:10px;float:right;background:#F5F5F5;padding:1px 2px;border:1px solid #ddd;color:#3B5998}
+
+.share a:hover{text-decoration:none;background:#E4E4E4}
 
 table.listing{width:99.7%;border-top:1px solid #DDDDDD;border-right:1px solid #DDDDDD;}
 

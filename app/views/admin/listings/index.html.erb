@@ -20,7 +20,7 @@
   <tr>
      <td style="width:100px;"><div style="overflow:scroll; width:200px; height:50px">
 <%= raw(admin_listing.banner) %></td>
-     <td><%= admin_listing.category.name %></td>
+     <td><%= admin_listing.category.name rescue ''%></td>
 
       <td><%= admin_listing.affiliate_merchant.name%></td>
     <td><%= link_to 'Show', admin_listing_path(admin_listing) %></td>
