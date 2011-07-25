@@ -249,13 +249,25 @@ ul#social-icons li{list-style:none;}
 .bannerBox p{color:#EB8A00;font-size:12px;}
 .bannerBox div.title{height:18px;}
 
-.share a{font-size:10px;float:right;padding:1px 2px;border:1px solid #ddd;color:#3B5998;background:#F5F5F5 url(/images/f-share.png) no-repeat left;padding-left:15px;}
+.share{height:35px;}
+.share a{
+	font-size:11px;
+	float:right;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-right:4px;
+	border:1px solid #CAD4E7;
+	color:#3B5998;
+	background:#ECEEF5 url(/images/f-share.png) no-repeat left;
+	padding-left:20px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
 
 .share a:hover{text-decoration:none;background:#e4e4e4 url(/images/f-share.png) no-repeat left;}
 
+
 table.listing{width:99.7%;border-top:1px solid #DDDDDD;border-right:1px solid #DDDDDD;}
-
-
 table.listing tr th{
 	background:#FFFFFF url(/images/tableHeader.jpg) bottom left repeat-x;
 	padding:5px 15px;
