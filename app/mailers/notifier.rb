@@ -6,6 +6,11 @@ class Notifier < ActionMailer::Base
     mail(:to => 'admin@littlesurprizes.com', :subject => "Transaction Details - #{Date.today.strftime('%d %B %Y')}")
   end
 
+  def send_payment_requests(payment_request)
+    @payment_request = payment_request
+    mail(:to => 'admin@littlesurprizes.com', :subject => 'new payment request')
+  end
+
 
 end
 

@@ -1,0 +1,37 @@
+<%= form_for([:admin,@user]) do |f| %>
+  <%= f.error_messages %>
+  <div class ="field">
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %></p>
+
+  <p><%= f.label :address %></p>
+  <p><%= f.text_field :address %></p>
+
+  <% if @user.paypal_info.blank? %>
+      <% @user.build_paypal_info %>
+        <%= f.fields_for :paypal_info do |d| %>
+           <label>Paypal ID  </label><br /><%= d.text_field :paypal_id %>
+        <%end%>
+  <%else%>
+
+        <%= f.fields_for :paypal_info do |d| %>
+           <label>Paypal ID </label><br /><%= d.text_field :paypal_id %>
+        <%end%>
+  <%end%>
+
+  <p><%= f.label :email %></p>
+  <p><%= f.text_field :email %></p>
+
+  <p><%= f.label :password %></p>
+  <p><%= f.password_field :password %></p>
+
+  <p><%= f.label :password_confirmation %></p>
+  <p><%= f.password_field :password_confirmation %></p>
+
+
+<p><%= f.submit "Update" %></p>
+</div>
+<% end %>
+
+<%= link_to 'Back', admin_users_path %>
+

@@ -3,53 +3,52 @@
   <h2 class="heading"> Balance </h2>
   <table class="earnings">
     <tr>
-      <th>Total Earnings : </th> 
-      <td> <%= number_to_currency(current_user.earnings)%> </td> 
+      <th>Total Earnings : </th>
+      <td> <%= number_to_currency(current_user.earnings)%> </td>
     </tr>
     <tr>
-      <th>Total Withdrawals :</th> 
-      <td><%= number_to_currency(current_user.withdrawals )%></td> 
+      <th>Total Withdrawals :</th>
+      <td><%= number_to_currency(current_user.withdrawals )%></td>
    </tr>
    <tr>
      <th>Requests being processed :</th>
-     <td><%= number_to_currency(calculate_pending_total) %></td> 
+     <td><%= number_to_currency(calculate_pending_total) %></td>
   </tr>
   <tr>
-    <th> 
+    <th>
        Amount available for withdrawal :<br />
       <span>( Minimum amount for withdrawal: <%= number_to_currency(Setting.minimum_fee.value) %> )</span>
-   </th> 
-    <td valign="top" style="padding-top:10px;"> <%= number_to_currency(current_user.available_for_withdrawal) %> </td> 
+   </th>
+    <td valign="top" style="padding-top:10px;"> <%= number_to_currency(current_user.available_for_withdrawal) %> </td>
   </tr>
-  
+
  </table>
   <br />
  <% if current_user.payment_requests.pending_payments.blank? %>
     <% if current_user.available_for_withdrawal > 0 %>
     <%= form_tag('#') do %>
-    <label> Amount I wish to withdraw*: </label> 
-     <%= text_field_tag('amount') %> 
+    <label> Amount I wish to withdraw*: </label>
+     <%= text_field_tag('amount') %>
 
      <div class="clear"></div>
 
      <label> My Paypal id: </label>
-     <%= text_field_tag('paypal_payer_id', (current_user.paypal_info.paypal_id rescue ' ') )%> 
+     <%= text_field_tag('paypal_payer_id', (current_user.paypal_info.paypal_id rescue ' ') )%>
 
      <div class="clear"></div>
      <hr />
      <div class="button">
        <%= submit_tag 'submit' ,:class => 'button' %> - or - <%= link_to "Back", root_path %>
-       <p>* Transaction fees applicable : <%=  Setting.find_by_reference('transaction_fee').value %>% of withdrawal amount plus 
+       <p>* Transaction fees applicable : <%=  Setting.find_by_reference('transaction_fee').value %>% of withdrawal amount plus
        <%= number_to_currency(Setting.find_by_reference('fixed_fee').value) %></p></div>
       <% end %>
       <%end%>
       <%else%>
       <hr />
       <div class="button">
-       <p> You have already requested to for a withdrawal. </p>
+       <p> You have already made a request for a withdrawal. Please wait till it is processed. Thank you.</p>
       </div>
       <div class="right"><%= link_to "Back", root_path %></div>
     <%end%>
 </div>
-
 

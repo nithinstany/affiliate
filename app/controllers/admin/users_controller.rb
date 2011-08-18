@@ -13,5 +13,13 @@ class Admin::UsersController < ApplicationController
   def payment_requests
      @user = User.find(params[:id], :include => [:payment_requests])
   end
+
+  def details
+    @user = User.find(params[:id])
+ end
+
+   def edit_details
+    @user = User.find(params[:id])
+ end
 end
 

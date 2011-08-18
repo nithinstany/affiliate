@@ -29,6 +29,8 @@ Affiliate::Application.routes.draw do
     resources :settings
     resources :users do
       get 'payment_requests', :on => :member
+      get 'details', :on => :member
+      get 'edit_details', :on => :member
       resources :earnings
     end
     resources :earnings

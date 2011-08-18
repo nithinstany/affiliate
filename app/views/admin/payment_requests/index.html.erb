@@ -9,6 +9,8 @@
   <tr>
     <th> user </th>
     <th> requested amount</th>
+    <th> Deductions</th>
+    <th> Total Payable</th>
     <th> requested Date </th>
     <th> State </th>
     <th> </th>
@@ -17,7 +19,9 @@
 <% @payment_requests.each do |pr| %>
   <tr>
     <td> <%= pr.user.name_or_email %></td>
-    <td> <%= pr.total_amount %></td>
+    <td>$ <%= pr.total_amount %></td>
+    <td>$ <%= (pr.transaction_fee.to_f + pr.fixed_fee.to_f) %></td>
+    <td>$ <%= (pr.total_amount.to_f - pr.transaction_fee.to_f - pr.fixed_fee.to_f) %></td>
     <td> <%= pr.created_at.to_date rescue '' %></td>
     <td> <%= pr.state %></td>
     <td> <%= link_to 'complete', complete_admin_payment_request_path(pr) if pr.state == 'pending' %> </td>

@@ -1,0 +1,34 @@
+<table class="show">
+  <tr>
+    <th>Name:</th>
+    <td><%= @user.name %></td>
+  </tr>
+
+  <tr>
+    <th>Address:</th>
+    <td><%= @user.address %></td>
+  </tr>
+
+  <tr>
+    <th>PayPal ID:</th>
+    <td><%= @user.paypal_info.paypal_id %></td>
+  </tr>
+
+  <tr>
+    <th>Email:</th>
+    <td><%= @user.email %></td>
+  </tr>
+
+  <tr>
+    <th>Password:</th>
+    <td><%= @user.password %></td>
+  </tr>
+
+  <tr>
+    <th>Confirm Password:</th>
+    <td><%= @user.password_confirmation %></td>
+  </tr>
+</table>
+<%= link_to 'Edit', edit_details_admin_user_path(@user) %> |
+<%= link_to 'Back', admin_users_path %>
+

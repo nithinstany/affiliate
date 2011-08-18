@@ -6,6 +6,7 @@ class PaymentRequest < ActiveRecord::Base
   scope :total, select('sum(amount) as amount')
   scope :total_trans_fee_earned, select('sum(transaction_fee) as amount')
   scope :total_fixed_fee, select('sum(fixed_fee) as amount')
+  after_create :send_email_to_admin
 
   def self.total_transaction_fee
     self.completed_payments.total_trans_fee_earned.first.amount + self.completed_payments.total_fixed_fee.first.amount rescue 0
@@ -13,6 +14,10 @@ class PaymentRequest < ActiveRecord::Base
 
   def total_amount #
     amount + transaction_fee + fixed_fee
+  end
+
+  def send_email_to_admin
+    Notifier.send_payment_requests(self).deliver
   end
 
 end

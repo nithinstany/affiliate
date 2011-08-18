@@ -38,9 +38,15 @@ class User < ActiveRecord::Base
   end
 
   def available_for_withdrawal
-    self.earnings.to_f - self.withdrawals.to_f - self.payment_requests.pending_payments.total.first.amount.to_f
+ self.earnings.to_f - self.withdrawals.to_f - (self.payment_requests.pending_payments.total.first.amount.to_f + self.payment_requests.pending_payments.total_trans_fee_earned.first.amount.to_f + self.payment_requests.pending_payments.total_fixed_fee.first.amount.to_f)
   end
 
+
+=begin
+  def available_for_withdrawal
+    self.earnings.to_f - self.withdrawals.to_f - (self.payment_requests.pending_payments.total.first.amount.to_f - self.payment_requests.pending_payments.total_trans_fee_earned.first.amount.to_f - self.payment_requests.pending_payments.total_fixed_fee.first.amount.to_f)
+  end
+=end
   def name_or_email
     name.blank?? email : name
   end

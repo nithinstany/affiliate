@@ -6,6 +6,7 @@
   <tr>
     <th> Name </th>
     <th> Email </th>
+    <th> Paypal ID </th>
     <th> facebook user </th>
     <th> Earnings </th>
     <th> Payment request </th>
@@ -14,11 +15,12 @@
 
 <% @users.each do |user| %>
   <tr>
-     <td> <%= user.name  %> </td>
+     <td> <%= link_to "#{user.name}", details_admin_user_path(user) %> </td>
      <td> <%= user.email %> </td>
+     <td> <%= user.paypal_info.paypal_id unless user.paypal_info.blank? %> </td>
      <td> <%= user.provider == 'facebook'? 'yes' : 'no' %> </td>
      <td> <%= link_to 'Earnings', [:admin, user] unless user.transactions.blank? %> </td>
-     <td> <%= link_to 'payment request', payment_requests_admin_user_path(user) unless user.payment_requests.blank? %> </td>
+     <td> <%= link_to 'payment request', payment_requests_admin_user_path(user) unless user.payment_requests.pending_payments.blank? %> </td>
      <td> <%= link_to 'Add Earning', new_admin_user_earning_path(user) %> </td>
   </tr>
 <% end %>

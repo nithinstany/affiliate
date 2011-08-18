@@ -8,7 +8,7 @@ class EarningsController < ApplicationController
 
   def create
     if params[:amount].to_f < Setting.minimum_fee.value.to_f
-      flash[:notice] = 'you enterd below the minimum Fee.'
+      flash[:notice] = "Please make sure the amount you wish to withdraw is more than the minimum amount"
       redirect_to :back and return
     end
     if params[:paypal_payer_id].blank? || params[:amount].blank? || current_user.available_for_withdrawal < params[:amount].to_f
