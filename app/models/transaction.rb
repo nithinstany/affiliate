@@ -10,7 +10,7 @@ class Transaction < ActiveRecord::Base
       unless link_share.end_date == Date.today
 
         #start_date = Transaction.convert_date_to_string(link_share.end_date)
-        start_date = 1.months.ago.beginning_of_month
+        start_date = Transaction.convert_date_to_string(1.months.ago.beginning_of_month)
 
         end_date = Transaction.convert_date_to_string(Date.today)
         system("rm #{Rails.root}/public/link-share-report.txt") if File.exists?("#{Rails.root}/public/link-share-report.txt")
