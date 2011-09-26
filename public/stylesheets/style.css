@@ -154,7 +154,7 @@ ul#social-icons li{list-style:none;}
 	color:#fff;
 	margin-right:10px;
 	background:#36481D;
-	-moz-border-radius:5px; 
+	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	padding:3px 8px;
 	border:1px solid #3e5320;
@@ -226,6 +226,19 @@ ul#social-icons li{list-style:none;}
 }
 
 .leftContent ul li a:hover{text-decoration:underline;}
+
+.leftContent ul li.current {background: url('/images/tab.png') no-repeat;
+        border-bottom :none;
+        position:relative;
+        left:-29px;
+        padding-left:35px;
+        padding-top:15px;
+}
+
+.leftContent ul li.current a{
+     color :#fff;
+     background:none;
+}
 
 .rightContent {
     min-height:500px;
@@ -435,7 +448,7 @@ table.earnings tr th span{font-size:11px;color:#c43300;}
 	padding:15px;
 	background:#F6F6F6;
 	boxrder:1px solid #ddd;
-	-moz-border-radius:5px; 
+	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	width:260px;
 	margin-left:15px;
@@ -505,9 +518,7 @@ table.earnings tr th span{font-size:11px;color:#c43300;}
    float:right;
    width:450px;
    padding-right:5px;
-   
-   
+
+
 }
 
-
-   
