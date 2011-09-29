@@ -3,12 +3,17 @@ class Admin::ListingsController < ApplicationController
   before_filter :require_admin
 
   def index
-     #@category = Category.find(params[:category_id])
-    @admin_listings =  Listing.all
+    if (params[:category_id])
 
+    @category = Category.find(params[:category_id])
+    @admin_listings = @category.listings.all
+ else
+    @admin_listings =  Listing.all
+   # @listing =  Listing.find(params[:category])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @admin_listings }
+  end
     end
   end
 

@@ -16,7 +16,8 @@
 <% @categories.each do |category| %>
   <tr>
     <td><%= category.name %></td>
-    <td><%= link_to 'Show', admin_category_path(category) %></td>
+    <td><%= link_to 'Show', admin_category_path(category) %> &nbsp; &nbsp;
+        <%= link_to 'Listings',admin_category_listings_path(category.id) %></td>
     <td><%= link_to 'Edit', edit_admin_category_path(category) %></td>
     <td><%= link_to 'Destroy', admin_category_path(category), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

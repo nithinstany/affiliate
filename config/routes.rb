@@ -24,7 +24,9 @@ Affiliate::Application.routes.draw do
   namespace :admin do
     root :to => 'categories#index'
     resources :listings
-    resources :categories
+    resources :categories do
+       resources :listings
+    end
     resources :affiliate_merchants
     resources :settings
     resources :users do
