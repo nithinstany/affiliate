@@ -19,11 +19,11 @@ class Transaction < ActiveRecord::Base
           if i > 0 # skip the header line
             value = line.split(' ')
             member = User.find_by_key(value[0])
-            if member && value[10].to_f > 0.00
-
-              reverse = line.reverse
+            reverse = line.reverse
+            order_id = reverse_value[8].reverse
+            prev_order = Transaction.find_by_orderid(order_id)
+            if member && value[10].to_f > 0.00 && prev_order.blank?
               reverse_value = reverse.split(' ')
-
               tranactiondate = reverse_value[7].reverse.split('/')  #transction date "month/day/year"
               trans_date = tranactiondate[2] + '-' + tranactiondate[0] + '-'+ tranactiondate[1]
 
